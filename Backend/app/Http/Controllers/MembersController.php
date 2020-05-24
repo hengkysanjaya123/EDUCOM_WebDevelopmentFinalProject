@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Members;
-use http\Env\Request;
+use Illuminate\Http\Request;
 
 
 class MembersController extends BaseController
@@ -22,7 +22,7 @@ class MembersController extends BaseController
 
     public function store(Request $request)
     {
-        $member = Members::create($request->all());
+        $member = Members::create(array_merge($request->all(), ['joinedDate' => date('Y-m-d')]));
 
         return $this->sendResponse($member, 'Data added successfully');
     }
@@ -32,5 +32,13 @@ class MembersController extends BaseController
         $member = Members::findorFail($id);
         $member->update($request->all());
         return $this->sendResponse($member, 'Data updated successfully');
+    }
+
+    public function delete(Request $request, $id)
+    {
+        $member = Members::findorFail($id);
+        $member->delete();
+
+        return 204;
     }
 }

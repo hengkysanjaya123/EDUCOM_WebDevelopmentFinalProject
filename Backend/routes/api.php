@@ -25,3 +25,10 @@ Route::get('members/{id}', 'MembersController@show');
 Route::post('members', 'MembersController@store');
 Route::put('members/{id}', 'MembersController@update');
 Route::delete('members/{id}', 'MembersController@delete');
+
+// rooms
+Route::get('rooms', 'RoomsController@index');
+Route::get('rooms/{id}', 'RoomsController@show');
+Route::post('rooms', 'RoomsController@store');
+Route::put('rooms/{id}', 'RoomsController@update');
+Route::delete('rooms/{id}', 'RoomsController@delete');
