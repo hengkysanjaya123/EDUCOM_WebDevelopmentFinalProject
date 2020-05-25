@@ -46,3 +46,10 @@ Route::get('room_channels/{id}', 'RoomChannelsController@show');
 Route::post('room_channels', 'RoomChannelsController@store');
 Route::put('room_channels/{id}', 'RoomChannelsController@update');
 Route::delete('room_channels/{id}', 'RoomChannelsController@delete');
+
+// channel chats
+Route::get('channel_chats', 'ChannelChatsController@index');
+Route::get('channel_chats/{id}', 'ChannelChatsController@show');
+Route::post('channel_chats', 'ChannelChatsController@store');
+Route::put('channel_chats/{id}', 'ChannelChatsController@update');
+Route::delete('channel_chats/{id}', 'ChannelChatsController@delete');
