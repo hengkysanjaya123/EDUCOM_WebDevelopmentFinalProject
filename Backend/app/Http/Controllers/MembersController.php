@@ -22,23 +22,41 @@ class MembersController extends BaseController
 
     public function store(Request $request)
     {
-        $member = Members::create(array_merge($request->all(), ['joinedDate' => date('Y-m-d')]));
+        try {
+            $validatedData = $request->validate([
+                'fullname' => 'required',
+                'email' => 'required',
+                'password' => 'required',
+            ]);
 
-        return $this->sendResponse($member, 'Data added successfully');
+            $member = Members::create(array_merge($validatedData, ['joinedDate' => date('Y-m-d')]));
+
+            return $this->sendResponse($member, 'Data added successfully');
+        } catch (\Exception $e) {
+            return $this->sendError($e->getMessage());
+        }
     }
 
     public function update(Request $request, $id)
     {
-        $member = Members::findorFail($id);
-        $member->update($request->all());
-        return $this->sendResponse($member, 'Data updated successfully');
+        try {
+            $member = Members::findorFail($id);
+            $member->update($request->all());
+            return $this->sendResponse($member, 'Data updated successfully');
+        } catch (\Exception $e) {
+            return $this->sendError($e->getMessage());
+        }
     }
 
     public function delete(Request $request, $id)
     {
-        $member = Members::findorFail($id);
-        $member->delete();
+        try {
+            $member = Members::findorFail($id);
+            $member->delete();
 
-        return 204;
+            return $this->sendResponse('', 'Data deleted successfully');
+        } catch (\Exception $e) {
+            return $this->sendError($e->getMessage());
+        }
     }
 }
