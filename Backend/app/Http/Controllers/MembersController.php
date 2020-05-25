@@ -27,6 +27,7 @@ class MembersController extends BaseController
                 'fullname' => 'required',
                 'email' => 'required',
                 'password' => 'required',
+                'gender' => 'required'
             ]);
 
             $member = Members::create(array_merge($validatedData, ['joinedDate' => date('Y-m-d')]));
