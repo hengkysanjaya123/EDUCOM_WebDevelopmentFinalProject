@@ -36,10 +36,14 @@ class RoomsController extends BaseController
 
     public function delete(Request $request, $id)
     {
-        $room = Rooms::findorFail($id);
-        $room->delete();
+        try {
+            $room = Rooms::findorFail($id);
+            $room->delete();
 
-        return 204;
+            return $this->sendResponse('', 'Data deleted successfully');
+        } catch (\Exception $e) {
+            return $this->sendError($e->getMessage());
+        }
     }
 
 }

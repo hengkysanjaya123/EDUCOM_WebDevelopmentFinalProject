@@ -32,3 +32,10 @@ Route::get('rooms/{id}', 'RoomsController@show');
 Route::post('rooms', 'RoomsController@store');
 Route::put('rooms/{id}', 'RoomsController@update');
 Route::delete('rooms/{id}', 'RoomsController@delete');
+
+// room participants
+Route::get('room_participants', 'RoomParticipantsController@index');
+Route::get('room_participants/{id}', 'RoomParticipantsController@show');
+Route::post('room_participants', 'RoomParticipantsController@store');
+Route::put('room_participants/{id}', 'RoomParticipantsController@update');
+Route::delete('room_participants/{id}', 'RoomParticipantsController@delete');
