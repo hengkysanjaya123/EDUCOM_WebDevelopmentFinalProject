@@ -15,4 +15,9 @@ class Rooms extends Eloquent
     {
         return $this->hasMany('App\RoomParticipants');
     }
+
+    public function room_channels()
+    {
+        return $this->hasMany('App\RoomChannels');
+    }
 }

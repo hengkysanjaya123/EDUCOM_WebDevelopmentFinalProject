@@ -39,3 +39,10 @@ Route::get('room_participants/{id}', 'RoomParticipantsController@show');
 Route::post('room_participants', 'RoomParticipantsController@store');
 Route::put('room_participants/{id}', 'RoomParticipantsController@update');
 Route::delete('room_participants/{id}', 'RoomParticipantsController@delete');
+
+// room channels
+Route::get('room_channels', 'RoomChannelsController@index');
+Route::get('room_channels/{id}', 'RoomChannelsController@show');
+Route::post('room_channels', 'RoomChannelsController@store');
+Route::put('room_channels/{id}', 'RoomChannelsController@update');
+Route::delete('room_channels/{id}', 'RoomChannelsController@delete');

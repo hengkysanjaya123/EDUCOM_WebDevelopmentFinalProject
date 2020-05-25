@@ -9,13 +9,6 @@ class RoomParticipantsController extends BaseController
 {
     public function index()
     {
-//        $roomParticipants = RoomParticipants::all();
-//        $roomParticipants = DB::table("room_participants")
-//            ->join('rooms', 'room_participants.room_id', '=', 'rooms.id')
-//            ->join('members', 'room_participants.member_id', '=', 'members.id')
-//            ->select('room_participants.*', 'rooms.*', 'members.*')
-//            ->get();
-
         $roomParticipants = RoomParticipants::with(['room', 'member'])->get();
 
         return $this->sendResponse($roomParticipants, 'Data retrieved successfully');
@@ -30,7 +23,7 @@ class RoomParticipantsController extends BaseController
     public function store(Request $request)
     {
         $roomParticipants = RoomParticipants::create($request->all());
-        return $this->sendResponse($roomParticipants, 'Data added sucessfully');
+        return $this->sendResponse($roomParticipants, 'Data added successfully');
     }
 
     public function update(Request $request, $id)
