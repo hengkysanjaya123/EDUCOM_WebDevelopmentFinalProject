@@ -1,0 +1,66 @@
+span {
+    font-weight: bold;
+    background: lightgray;
+    padding: .3em .8em;
+    cursor: pointer;
+}
+
+.eduka-pink {
+    background-color: #fe47aa;
+} 
+
+
+.play-container {
+    background-color: white;
+    padding: 3em;
+    margin-bottom: 1em;
+    input {
+        padding: 1em;
+        margin-bottom: 2em;
+    }
+}
+
+.play-container0 {
+    border-style: solid;
+    border-width: 10px;
+    border-color: #7cc8ec;
+    padding: 3em;
+    margin-bottom: 1em;
+    input {
+        padding: 1em;
+        margin-bottom: 2em;
+    }
+}
+
+.play-container1 {
+    background-color: #48525e;
+    padding: 3em;
+    margin-bottom: 1em;
+    input {
+        padding: 1em;
+        margin-bottom: 2em;
+    }
+
+    h2, h3, h4, h5, p, a {
+        color: white;
+    }
+}
+
+h1 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+.custcolumn {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clear floats after image containers */
+.custrow::after {
+  content: "";
+  clear: both;
+  display: table;
+}
