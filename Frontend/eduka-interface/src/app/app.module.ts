@@ -7,12 +7,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { ClassroomsComponent } from './classrooms/classrooms.component';
+import { RoomComponent } from './room/room.component';
+import { ChannelComponent } from './channel/channel.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    ClassroomsComponent,
+    RoomComponent,
+    ChannelComponent
   ],
   imports: [
     BrowserModule,

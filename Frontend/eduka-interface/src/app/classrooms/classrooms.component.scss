@@ -1,0 +1,53 @@
+nav {
+	a {
+		color: black;
+	}
+	ul {
+		li {
+		 	a { 
+		 		color: black;
+		 	}
+		}
+	}
+}
+
+
+.room-manager-container {
+	background-color: #f3f4f9;
+}
+
+.my-classrooms-container {
+	padding: 3em;
+	background-color: white;
+
+}
+.rmc-tc {
+	color: #575e68;
+}
+
+.eduka-pink {
+    background-color: #fe47aa;
+} 
+
+
+.join-room {
+	background-color: white;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #fe47aa;
+	color: #fe47aa;
+}
+
+.create-room {
+	background-color: #fe47aa;
+	border-width: 1px;
+	border-style: solid;
+	border-color: white;
+	color: white;
+}
+
+.pink-line {
+	height: 5px;
+	width: 25%;
+    background-color: #fe47aa;
+}
