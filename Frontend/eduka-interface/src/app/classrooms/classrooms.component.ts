@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpService } from '../http.service';
+import { Injectable } from '@angular/core';
+import { Room } from '../models/room.model';
+
 
 @Component({
   selector: 'app-classrooms',
@@ -8,18 +11,15 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ClassroomsComponent implements OnInit {
 
- 	data = [];
-  constructor(private http: HttpClient) {
-    this.http.get('http://localhost/employee.php').subscribe(data => {
-    this.data.push(data);
-    console.log(this.data);
-   
-    
-    }, error => console.error(error));
-  }
 
+  rooms: Object;
+  constructor(private _http: HttpService) { }  
   ngOnInit(): void {
-  }
-
+      this._http.getRooms().subscribe(data=>{
+      this.rooms = data;
+      console.log(this.rooms);
+    }
+  );
+  }    
 
 }

@@ -16,10 +16,45 @@ nav {
 	background-color: #f3f4f9;
 }
 
+.select-room {
+
+    img {
+    	display: inline-block;
+    }
+}
+
+
 .my-classrooms-container {
 	padding: 3em;
 	background-color: white;
+	height: 600px;
+	overflow-x: scroll;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+    h4 {
+    	color: black;
+    	font-size: 1.5vw;
+    	margin-left: 0.5em;	
+    }
+}
 
+.my-classrooms-container::-webkit-scrollbar { 
+  	width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
 }
 .rmc-tc {
 	color: #575e68;

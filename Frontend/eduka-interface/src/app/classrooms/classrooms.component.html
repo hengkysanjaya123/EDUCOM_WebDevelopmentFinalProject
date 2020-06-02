@@ -25,9 +25,12 @@
 </div>
 
 <div class="my-classrooms-container">
-	<h2 class="rmc-tc"><b>Your Rooms</b></h2>
+	<h2 class="rmc-tc"><b>Your Rooms</b></h2>	
 	<div class="pink-line"></div>
-	
+	<div class="select-room" scrollX="true" *ngFor="let room of rooms">
+		<p class="name"> {{room.name}} </p>
+		<img src="../../assets/homepage/bg-image8.jpg" width="30%" height="50%">
+	</div>
 </div>
 <div class="my-classrooms-container">
 	<h2 class="rmc-tc"><b>Rooms Shared with You</b></h2>
