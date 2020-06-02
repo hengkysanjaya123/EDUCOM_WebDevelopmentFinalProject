@@ -11,13 +11,16 @@ class RoomParticipantsController extends BaseController
     {
         $roomParticipants = RoomParticipants::with(['room', 'member'])->get();
 
-        return $this->sendResponse($roomParticipants, 'Data retrieved successfully');
+        return $roomParticipants;
+//        return $this->sendResponse($roomParticipants, 'Data retrieved successfully');
     }
 
     public function show($id)
     {
-        $roomParticipants = RoomParticipants::find($id)::with(['room', 'member'])->first();
-        return $this->sendResponse($roomParticipants, 'Data retrieved successfully');
+        $roomParticipant = RoomParticipants::find($id)::with(['room', 'member'])->first();
+
+        return $roomParticipant;
+//        return $this->sendResponse($roomParticipants, 'Data retrieved successfully');
     }
 
     public function store(Request $request)

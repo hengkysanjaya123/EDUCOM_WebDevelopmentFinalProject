@@ -11,13 +11,15 @@ class MembersController extends BaseController
     public function index()
     {
 //        $members = DB::table('members')->get();
-        return $this->sendResponse(Members::all(), 'Members retrieved successfully');
+        return Members::all();
+//        return $this->sendResponse(Members::all(), 'Members retrieved successfully');
     }
 
     public function show($id)
     {
         $member = Members::find($id);
-        return $this->sendResponse($member, 'Data retrieved successfully');
+        return $member;
+//        return $this->sendResponse($member, 'Data retrieved successfully');
     }
 
     public function store(Request $request)

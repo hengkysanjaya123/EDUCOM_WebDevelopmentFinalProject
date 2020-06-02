@@ -11,13 +11,16 @@ class RoomChannelsController extends BaseController
     {
         $roomChannels = RoomChannels::with(['room'])->get();
 
-        return $this->sendResponse($roomChannels, 'Data retrieved successfully');
+        return $roomChannels;
+//        return $this->sendResponse($roomChannels, 'Data retrieved successfully');
     }
 
     public function show($id)
     {
         $roomChannel = RoomChannels::find($id)::with('room')->first();
-        return $this->sendResponse($roomChannel, 'Data retrieved successfully');
+        return $roomChannel;
+        
+//        return $this->sendResponse($roomChannel, 'Data retrieved successfully');
     }
 
     public function store(Request $request)

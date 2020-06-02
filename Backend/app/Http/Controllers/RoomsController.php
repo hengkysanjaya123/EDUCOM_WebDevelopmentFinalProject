@@ -11,13 +11,15 @@ class RoomsController extends BaseController
     public function index()
     {
         $rooms = Rooms::all();
-        return $this->sendResponse($rooms, 'Data retrieved successfully');
+        return $rooms;
+//        return $this->sendResponse($rooms, 'Data retrieved successfully');
     }
 
     public function show($id)
     {
         $room = Rooms::find($id);
-        return $this->sendResponse($room, 'Data retrieved successfully');
+        return $room;
+//        return $this->sendResponse($room, 'Data retrieved successfully');
     }
 
     public function store(Request $request)

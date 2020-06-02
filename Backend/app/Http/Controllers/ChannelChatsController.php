@@ -11,13 +11,16 @@ class ChannelChatsController extends Controller
     {
         $channelChats = ChannelChats::with(['room'])->get();
 
-        return $this->sendResponse($channelChats, 'Data retrieved successfully');
+        return $channelChats;
+//        return $this->sendResponse($channelChats, 'Data retrieved successfully');
     }
 
     public function show($id)
     {
         $channelChat = ChannelChats::find($id)::with('room')->first();
-        return $this->sendResponse($channelChat, 'Data retrieved successfully');
+
+        return $channelChat;
+//        return $this->sendResponse($channelChat, 'Data retrieved successfully');
     }
 
     public function store(Request $request)
