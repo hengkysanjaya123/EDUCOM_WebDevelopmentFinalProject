@@ -13,3 +13,78 @@
     }
     height: 5%;
 }
+
+.channel-list {
+	display: inline-block;
+	border-style: solid;
+	border-color: #fe47aa;
+	border-width: 5px;
+	height: 600px;
+	width: 31.85%;
+	background-color: #575e68;
+    overflow-y:scroll;
+	margin-left: 0.75%;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+    h6 {
+    	color: white;
+    	font-size: 1.5vw;
+    	margin-left: 0.5em;
+    }
+    button {
+    	width: 100%;
+    	height: 60px;
+    }
+}
+
+.bottom-section {
+	width: 100%;
+}
+
+
+.channel-list::-webkit-scrollbar { 
+  	width: 10px;
+}
+
+.chat-box {
+	display: inline-block;
+	border-style: solid;
+	float: right;	
+	margin-right: 9%;	 
+	border-color: #fe47aa;
+	border-width: 5px;
+	height: 600px;
+	width: 57%;
+	background-color: #575e68;
+    overflow-y:scroll;
+	margin-left: 0.75%;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+    h6 {
+    	color: white;
+    	font-size: 1.5vw;
+    	margin-left: 0.5em;
+    }
+    button {
+    	width: 100%;
+    	height: 60px;
+    }
+}
+.chat-box::-webkit-scrollbar { 
+  	width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}

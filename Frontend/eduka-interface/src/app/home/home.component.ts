@@ -10,10 +10,15 @@ export class HomeComponent implements OnInit {
 
   // clickCounter: number = 0;
   // name: string = 'hey';
+  newEmail: string;
+  newPassword: string;
+
   constructor() { }
+
 
   ngOnInit(): void {
   }
+
   // countClick() {
   // 	this.clickCounter += 1;
   // }
