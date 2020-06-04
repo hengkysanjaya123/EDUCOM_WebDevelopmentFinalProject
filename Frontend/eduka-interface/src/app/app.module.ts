@@ -11,6 +11,7 @@ import { ClassroomsComponent } from './classrooms/classrooms.component';
 import { RoomComponent } from './room/room.component';
 import { SignupComponent } from './signup/signup.component';
 import { CreateroomComponent } from './createroom/createroom.component';
+import { JoinroomComponent } from './joinroom/joinroom.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CreateroomComponent } from './createroom/createroom.component';
     ClassroomsComponent,
     RoomComponent,
     SignupComponent,
-    CreateroomComponent
+    CreateroomComponent,
+    JoinroomComponent
   ],
   imports: [
     BrowserModule,
