@@ -18,6 +18,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+// auth
+//Route::post('login', array('middleware' => 'cors', 'uses' => 'AuthController@authorization'));
+Route::post('login', 'AuthController@authorization');
+
 
 // members
 Route::get('members', 'MembersController@index');
