@@ -1,4 +1,4 @@
-//nav {
+  //nav {
 //	a {
 //		color: black;
 //	}
@@ -63,17 +63,38 @@
 }
 
 .select-room {
+  // img {
+  //   display: inline-block;
+  // }
+  // margin-right: 15px;
+  width: 40%;
+  align-content: flex-start;
 
-  img {
-    display: inline-block;
-  }
+}
+.room-item {
+  background: gray;
+  // margin-right: 15px;
+  // width: 80%;
+  height: 70%;
+  h4 {
+    color: black;
+    font-size: 1.5vw;
+  }  
 }
 
-
-.my-classrooms-container {
+.heading-container {
   padding: 3em;
   background-color: white;
-  height: 600px;
+}
+
+.my-classrooms-container {
+  padding-top: 0em;
+  align-content: flex-start;
+  flex-wrap: nowrap;
+  padding-left: 3em;
+  background-color: white;
+  height: 350px;
+  display: flex;
   overflow-x: scroll;
   -ms-overflow-style: none; /* Internet Explorer 10+ */
   scrollbar-width: none; /* Firefox */

@@ -49,16 +49,21 @@
   <!--  </div>-->
 </div>
 
-<div class="my-classrooms-container">
+<div class="heading-container">
   <h2 class="room-heading"><b>Your Rooms</b></h2>
   <div class="pink-line"></div>
-  <div class="select-room" scrollX="true" *ngFor="let room of rooms">
-    <p class="name"> {{room.name}} </p>
-    <img src="../../assets/homepage/bg-image8.jpg" width="30%" height="50%">
-  </div>
 </div>
 <div class="my-classrooms-container">
+  <div class="select-room" scrollX="true" *ngFor="let room of rooms">
+    <h4 class="name"> {{room.name}} </h4>
+    <img class="room-item" src="../../assets/homepage/bg-image8.jpg" alt="{{ room.name }}">
+    <p><i>{{ room.description }}</i></p>
+  </div>
+</div>
+  <div class="heading-container">
   <h2 class="room-heading"><b>Rooms shared with You</b></h2>
-  <div class="pink-line"></div>
+  <div class="pink-line"></div>  
+</div>
+<div class="my-classrooms-container">
 
 </div>
