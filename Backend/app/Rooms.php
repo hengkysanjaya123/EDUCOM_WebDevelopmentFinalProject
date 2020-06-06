@@ -9,7 +9,7 @@ class Rooms extends Eloquent
 {
     protected $table = 'rooms';
 
-    protected $fillable = ['name', 'description', 'createdDate', 'owner'];
+    protected $fillable = ['name', 'description', 'createdDate', 'owner', 'roomCode'];
 
     public function room_participants()
     {
