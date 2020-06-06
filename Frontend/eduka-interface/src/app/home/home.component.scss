@@ -2760,7 +2760,7 @@
 			padding: 0;
 			position: absolute;
 			top: 0;
-			font-size: 1em;
+			font-size: 2em;
 		}
 
 		#header a {
@@ -2839,6 +2839,15 @@
 	}
 
 /* Nav */
+
+  .navigation{
+    background-color: transparent;
+    border: 0px;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    box-shadow: none;
+  }
 
 	@media screen and (max-width: 980px) {
 

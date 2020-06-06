@@ -1,13 +1,57 @@
+.login-page{
+  width: 100%;
+  //height: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+
 .login-container {
-	background-color: white;
-	padding: 3em;
-    margin-bottom: 1em;
-    input {
-        padding: 1em;
-        margin-bottom: 2em;
-    }
+  background-color: white;
+  padding: 5em;
+  margin-bottom: 1em;
+
+  input {
+    max-width: 100%;
+    padding: 15px;
+    //margin-bottom: 2px;
+  }
 }
 
 .eduka-pink {
-    background-color: #fe47aa;
-} 
+  background-color: #fe47aa;
+}
+
+.left-side{
+
+  .btn-login-wrapper{
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .btn-login{
+    width: 120%;
+    height: 45px;
+    text-align: center;
+    align-items: center;
+    color: white;
+    border: 0px solid white;
+    margin-right: -25px;
+    //margin-left: 15px;
+  }
+}
+
+.right-side {
+  //padding: 12em 0 10em 0;
+  background-image: url('../../assets/homepage/bg-image8.jpg');
+  background-size: cover;
+  background-position: top;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  text-align: center;
+  //border-top: 0.5em solid #5385c1;
+  width: 100%;
+  height: 120vh;
+}
+
+
