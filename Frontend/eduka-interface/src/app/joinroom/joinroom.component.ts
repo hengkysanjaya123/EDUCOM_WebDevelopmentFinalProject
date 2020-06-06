@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-joinroom',
@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JoinroomComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
 
+  joinRoom(roomCode) {
+    const code = roomCode.target.value;
+    // TODO: change to current signed in member_id
+    const member_id = 1;
+
+
+  }
 }

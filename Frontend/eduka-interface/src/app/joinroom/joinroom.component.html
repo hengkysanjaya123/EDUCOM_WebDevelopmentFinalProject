@@ -2,14 +2,14 @@
 	<div class="joinroom-container">
 		<h1>Join Room</h1>
 		<hr>
-		<div class="row">	
+		<div class="row">
 			<div class="input-field col s6 m4 l4">
-				<input type="text" name="roomCode" placeholder="Room Code">
+				<input type="text" name="roomCode" placeholder="Room Code" #roomCode>
 			</div>
 		</div>
 
 		<div class="row">
-			<button class="btn-large waves-effect eduka-pink" type="submit" name="createRoom">Join Room</button>
-		</div>	
+			<button class="btn-large waves-effect eduka-pink" type="submit" name="createRoom" (click)="joinRoom(roomCode)">Join Room</button>
+		</div>
 	</div>
 </div>
