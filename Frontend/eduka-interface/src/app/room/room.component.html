@@ -1,26 +1,66 @@
+<div class="">
+  <div class="">
+    <!-- Header -->
+    <header id="header">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="inner">
+            <a href="#" class="logo" routerLink="/">Educom</a>
+            <nav id="nav" class="navigation">
+              <a href="/">Home</a>
+              <a href="#" routerLink="/logout">Logout</a>
+            </nav>
+            <a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+          </div>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <div class="room-manager-container darken-pseudo darken-with-text">
+  </div>
+
+
+  <div class="container-fluid mycontainer">
+    <!--      <div class="row content">-->
+    <!--        <div class="col-md-12">-->
+    <!--          <div class="room-name-container">-->
+    <!--            <div class="valign-wrapper">-->
+    <!--              <h5><b>Room Name</b></h5> &nbsp;<h6><i>#RoomCode</i></h6>-->
+    <!--            </div>-->
+    <!--          </div>-->
+    <!--        </div>-->
+    <!--    <div class="col-md-12">-->
+    <!--      <div class="room-name-container">-->
+    <!--        <div class="valign-wrapper">-->
+    <!--          <h5>Channel Name</h5>-->
+    <!--        </div>-->
+    <!--      </div>-->
+    <!--    </div>-->
+    <!--      </div>-->
+
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="room-name">Room 1 #ABCDE</h1>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="bottom-section">
+          <div class="channel-list">
+            <!-- ngFor (loop through channel list in room)	-->
+            <button class="waves-effect" (click)="doSomething()">#General</button>
+            <button class="waves-effect">#Announcements</button>
+          </div>
+          <div class="chat-box">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
 <br><br>
-<div class="row">
-	<div class="col s4 m4 l4">
-		<div class="room-name-container">
-			<div class="valign-wrapper">
-				<h5><b>Room Name</b></h5> &nbsp;<h6><i>#RoomCode</i></h6>
-			</div>
-		</div>
-	</div>
-	<div class="col s7 m7 l7">
-		<div class="room-name-container">
-			<div class="valign-wrapper">
-				<h5>Channel Name</h5>
-			</div>
-		</div>
-	</div>
-</div>
-<div class="bottom-section">
-	<div class="channel-list">
-		<!-- ngFor (loop through channel list in room)	-->
-		<button># General</button>
-		<button># Announcements</button>
-	</div>
-	<div class="chat-box">
-	</div>
-</div>
+
+<app-footer></app-footer>

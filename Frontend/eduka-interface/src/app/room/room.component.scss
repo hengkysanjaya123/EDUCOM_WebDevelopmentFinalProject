@@ -1,90 +1,297 @@
+.content {
+  margin-top: -15px;
+  color: white;
+}
+
+.mycontainer {
+  position: absolute;
+  top: 250px;
+  z-index: 1000;
+}
+
+.room-name {
+  font-size: 55px;
+  color: white;
+  position: relative;
+  z-index: 100;
+  margin-top: -25px;
+  margin-bottom: 55px;
+}
+
 .room-name-container {
-	background-color: white;
-    padding: 2em;
-    border-style: solid;
-    border-width: 5px;
-    border-color: #fe47aa;
-    h5 {
-    	color: #575e68;
-    	font-size: 2vw;
-    }
-    h6 {
-        font-size: 1.0vw;
-    }
-    height: 5%;
+  background-color: white;
+  text-align: center;
+
+  h5 {
+    color: black;
+    font-size: 2vw;
+  }
+
+  h6 {
+    font-size: 1.0vw;
+  }
+
+  height: 5%;
 }
 
 .channel-list {
-	display: inline-block;
-	border-style: solid;
-	border-color: #fe47aa;
-	border-width: 5px;
-	height: 600px;
-	width: 31.85%;
-	background-color: #575e68;
-    overflow-y:scroll;
-	margin-left: 0.75%;
-    -ms-overflow-style: none;  /* Internet Explorer 10+ */
-    scrollbar-width: none;  /* Firefox */
-    h6 {
-    	color: white;
-    	font-size: 1.5vw;
-    	margin-left: 0.5em;
-    }
-    button {
-    	width: 100%;
-    	height: 60px;
-    }
+  display: inline-block;
+  //border-style: solid;
+  //border-color: #fe47aa;
+  //border-width: 5px;
+  height: 600px;
+  width: 31.85%;
+  background-color: #575e68;
+  overflow-y: scroll;
+  //margin-left: 0.75%;
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+
+  h6 {
+    color: white;
+    font-size: 1.5vw;
+    margin-left: 0.5em;
+  }
+
+  button {
+    background-color: #ffffff;
+    width: 100%;
+    height: 60px;
+    border: 0.5px solid #ccc;
+  }
+
+  button:active {
+    color: #fe47aa;
+  }
 }
 
 .bottom-section {
-	width: 100%;
+  width: 100%;
 }
 
 
-.channel-list::-webkit-scrollbar { 
-  	width: 10px;
+.channel-list::-webkit-scrollbar {
+  width: 10px;
 }
 
 .chat-box {
-	display: inline-block;
-	border-style: solid;
-	float: right;	
-	margin-right: 9%;	 
-	border-color: #fe47aa;
-	border-width: 5px;
-	height: 600px;
-	width: 57%;
-	background-color: #575e68;
-    overflow-y:scroll;
-	margin-left: 0.75%;
-    -ms-overflow-style: none;  /* Internet Explorer 10+ */
-    scrollbar-width: none;  /* Firefox */
-    h6 {
-    	color: white;
-    	font-size: 1.5vw;
-    	margin-left: 0.5em;
-    }
-    button {
-    	width: 100%;
-    	height: 60px;
-    }
+  display: inline-block;
+  //border-style: solid;
+  float: right;
+  //margin-right: 9%;
+  //border-color: #fe47aa;
+  //border-width: 5px;
+  height: 600px;
+  width: 68%;
+  background-color: #575e68;
+  overflow-y: scroll;
+  //margin-left: 0.75%;
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+  h6 {
+    color: white;
+    font-size: 1.5vw;
+    margin-left: 0.5em;
+  }
+
+  button {
+    width: 100%;
+    height: 60px;
+  }
 }
-.chat-box::-webkit-scrollbar { 
-  	width: 10px;
+
+.chat-box::-webkit-scrollbar {
+  width: 10px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1; 
+  background: #f1f1f1;
 }
- 
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #888; 
+  background: #888;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+  background: #555;
+}
+
+.room-manager-container {
+  //background-color: #f3f4f9;
+  padding: 12em 0 10em 0;
+  background-image: url('../../assets/classrooms/bg-image.jpg');
+  background-size: cover;
+  background-position: top;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  text-align: center;
+  border-top: 0.5em solid #5385c1;
+  width: 100%;
+  height: 160vh;
+  position: relative;
+  z-index: -1000;
+}
+
+/* Header */
+
+.subpage {
+  padding-top: 44px;
+}
+
+.subpage #header {
+  background: #5385c1;
+  top: 0;
+  height: 44px;
+  line-height: 44px;
+  position: fixed;
+}
+
+#header {
+  color: #d4e0ef;
+  cursor: default;
+  height: 75px;
+  left: 0;
+  line-height: 3.25em;
+  position: absolute;
+  text-align: right;
+  //top: 4em;
+  width: 100%;
+  z-index: 10001;
+  padding: 15px;
+  //background-color: #fe47aa;
+  //-webkit-box-shadow: 3px 3px 5px 6px #ccc; /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  //-moz-box-shadow: 3px 3px 5px 6px #ccc; /* Firefox 3.5 - 3.6 */
+  //box-shadow: 3px 4px 10px 3px #ccc; /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+}
+
+.darken-pseudo {
+  position: relative;
+}
+
+.darken-pseudo:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: block;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.darken-with-text div {
+  margin-top: -15px;
+  //font-size: 2em;
+  //text-align: center;
+  color: white;
+  //padding-top: 50px;
+  position: relative;
+  z-index: 100;
+}
+
+#header .inner {
+  margin: 0 auto;
+  position: relative;
+}
+
+#header .logo {
+  color: white;
+  display: inline-block;
+  font-weight: 600;
+  height: inherit;
+  left: 0;
+  line-height: inherit;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  font-size: 2em;
+}
+
+#header a {
+  //color: #fe47aa;
+  -moz-transition: color 0.2s ease-in-out;
+  -webkit-transition: color 0.2s ease-in-out;
+  -ms-transition: color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out;
+  display: inline-block;
+  padding: 0 0.75em;
+  //color: inherit;
+  text-decoration: none;
+  font-size: .8em;
+}
+
+#header a:hover {
+  color: #ffffff;
+}
+
+#header a:last-child {
+  padding-right: 0;
+}
+
+#header a.navPanelToggle {
+  display: none;
+  text-decoration: none;
+  height: 4em;
+  width: 4em;
+  z-index: 10003;
+}
+
+#header a.navPanelToggle .fa {
+  font-size: 1.25em;
+}
+
+@media screen and (max-width: 980px) {
+
+  #header a.navPanelToggle {
+    display: inline-block;
+  }
+
+}
+
+@media screen and (max-width: 736px) {
+
+  #header a {
+    padding: 0 0.5em;
+  }
+
+}
+
+@media screen and (max-width: 980px) {
+
+  #header {
+    top: 3em;
+    height: 44px;
+    line-height: 44px;
+  }
+
+}
+
+@media screen and (max-width: 736px) {
+
+  #header {
+    top: 2em;
+  }
+
+}
+
+@media screen and (max-width: 480px) {
+
+  #header {
+    top: 1em;
+    min-width: 320px;
+  }
+
+}
+
+.navigation {
+  background-color: transparent;
+  border: 0px;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  box-shadow: none;
 }
