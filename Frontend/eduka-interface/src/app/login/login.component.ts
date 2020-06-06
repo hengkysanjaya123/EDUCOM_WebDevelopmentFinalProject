@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthService} from '../../services/auth/auth.service';
 import {HTTPCustomResponse} from '../../models/response.model';
-import {ActivatedRoute, Router} from "@angular/router";
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.message = this.route.snapshot .paramMap.get('message');
+    this.message = this.route.snapshot.paramMap.get('message');
   }
 
   doLogin() {
@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
       .subscribe(res => {
         this.response = res;
 
-        if(!res.success){
+        if (!res.success) {
           this.errorMsg = res.message;
           return;
         }

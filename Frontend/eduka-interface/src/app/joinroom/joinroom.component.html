@@ -2,14 +2,20 @@
 	<div class="joinroom-container">
 		<h1>Join Room</h1>
 		<hr>
-		<div class="row">
+
+    <br>
+    <div class="alert alert-danger" role="alert" *ngIf="errorMsg">
+      {{errorMsg}}
+    </div>
+
+    <div class="row">
 			<div class="input-field col s6 m4 l4">
-				<input type="text" name="roomCode" placeholder="Room Code" #roomCode>
+				<input type="text" [(ngModel)]="roomCode" placeholder="Room Code">
 			</div>
 		</div>
 
 		<div class="row">
-			<button class="btn-large waves-effect eduka-pink" type="submit" name="createRoom" (click)="joinRoom(roomCode)">Join Room</button>
+			<button class="btn-large waves-effect eduka-pink" type="submit" name="createRoom" (click)="joinRoom()">Join Room</button>
 		</div>
 	</div>
 </div>

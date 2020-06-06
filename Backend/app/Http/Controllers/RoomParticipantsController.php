@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\RoomParticipants;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class RoomParticipantsController extends BaseController
 {
@@ -30,7 +31,17 @@ class RoomParticipantsController extends BaseController
             'member_id' => 'required',
         ]);
 
-        $roomParticipants = RoomParticipants::create($request->all());
+        $room = DB::table('rooms')->where('roomCode', '=', $request->roomCode)->count();
+        if ($room == 0) {
+            return $this->sendResponse('', 'Room Code not found', false);
+        }
+
+        $isMemberInRoom = DB::table('room_participants')->where('member_id', '=', $request->member_id)->count();
+        if ($isMemberInRoom > 0) {
+            return $this->sendResponse('', 'You are already in this room', false);
+        }
+
+        $roomParticipants = RoomParticipants::create(array_merge($request->all(), ['status' => 'member']));
         return $this->sendResponse($roomParticipants, 'Data added successfully');
     }
 

@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {HttpService} from '../http.service';
+import {RoomService} from '../../services/room/room.service';
+import {ActivatedRoute} from "@angular/router";
 
 
 @Component({
@@ -9,10 +10,15 @@ import {HttpService} from '../http.service';
 })
 export class ClassroomsComponent implements OnInit {
 
-
+  message = '';
   rooms: Object;
 
-  constructor(private _http: HttpService) {
+  constructor(private _http: RoomService, private route: ActivatedRoute) {
+    this.message = this.route.snapshot.paramMap.get('message');
+  }
+
+  hideMessage() {
+    this.message = '';
   }
 
   ngOnInit(): void {
@@ -21,6 +27,10 @@ export class ClassroomsComponent implements OnInit {
         console.log(this.rooms);
       }
     );
+
+    // setTimeout(function () {
+    //   console.log('message: ' + this.message);
+    // }, 3000);
   }
 
 }

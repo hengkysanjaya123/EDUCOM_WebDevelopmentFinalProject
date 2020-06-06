@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {RoomService} from '../../services/room/room.service';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-joinroom',
@@ -6,18 +8,38 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./joinroom.component.scss']
 })
 export class JoinroomComponent implements OnInit {
+  roomCode: string;
+  errorMsg = '';
 
-  constructor() {
+  constructor(private api: RoomService, private router: Router) {
   }
 
   ngOnInit(): void {
   }
 
-  joinRoom(roomCode) {
-    const code = roomCode.target.value;
+  joinRoom() {
+    this.errorMsg = '';
+
+    if (!this.roomCode) {
+      this.errorMsg = 'Please enter the Room Code';
+      return;
+    }
+
     // TODO: change to current signed in member_id
-    const member_id = 1;
+    const data = {
+      roomCode: this.roomCode,
+      member_id: 1
+    };
+    this.api.joinRoom(data).subscribe(res => {
+      console.log('success: ' + JSON.stringify(res));
+      if (!res.success) {
+        this.errorMsg = res.message;
+        return;
+      }
 
-
+      this.router.navigate(['\classrooms', {message: 'Room joined successfully'}]);
+    }, err => {
+      console.log('error: ' + JSON.stringify(err));
+    });
   }
 }
