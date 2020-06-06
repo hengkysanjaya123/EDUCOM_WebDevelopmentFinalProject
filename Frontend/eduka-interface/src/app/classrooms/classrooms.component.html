@@ -27,22 +27,24 @@
 </header>
 
 
-<div class="room-manager-container">
-	<br>
-	<div class="center-align">
-		<h2 class="rmc-tc"> <b>Stay Connected with all your</b></h2><h2 class="rmc-tc"><b>teammates and friends!</b></h2>
-	</div>
-	<br><br><br>
-	<div class="center-align">
-		<button class="btn-large join-room" [routerLink]="['/joinroom']"><b>Join Room</b></button>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		<button class="btn-large create-room" [routerLink]="['/createroom']"><b>Create Room</b></button>
-	</div>
-	<br><br><br>
+<div class="room-manager-container darken-pseudo darken-with-text">
+<!--  <div class="banner">-->
+    <br>
+    <div class="center-align">
+      <h2 class="rmc-tc"> <b>Stay Connected with all your</b></h2><h2 class="rmc-tc"><b>teammates and friends!</b></h2>
+    </div>
+    <br><br><br>
+    <div class="center-align">
+      <button class="btn-large join-room" [routerLink]="['/joinroom']"><b>Join Room</b></button>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <button class="btn-large create-room" [routerLink]="['/createroom']"><b>Create Room</b></button>
+    </div>
+    <br><br><br>
+<!--  </div>-->
 </div>
 
 <div class="my-classrooms-container">
-	<h2 class="rmc-tc"><b>Your Rooms</b></h2>
+	<h2 class="room-heading"><b>Your Rooms</b></h2>
 	<div class="pink-line"></div>
 	<div class="select-room" scrollX="true" *ngFor="let room of rooms">
 		<p class="name"> {{room.name}} </p>
@@ -50,7 +52,7 @@
 	</div>
 </div>
 <div class="my-classrooms-container">
-	<h2 class="rmc-tc"><b>Rooms Shared with You</b></h2>
+	<h2 class="room-heading"><b>Rooms shared with You</b></h2>
 	<div class="pink-line"></div>
 
 </div>
