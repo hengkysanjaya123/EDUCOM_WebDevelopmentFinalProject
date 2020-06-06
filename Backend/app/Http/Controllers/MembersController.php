@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Members;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 
 class MembersController extends BaseController
@@ -31,6 +32,11 @@ class MembersController extends BaseController
                 'password' => 'required',
                 'gender' => 'required'
             ]);
+
+            $isExist = DB::table('members')->where('email', '=', $request->email)->count();
+            if ($isExist > 0) {
+                return $this->sendResponse('', 'Email already exist', false);
+            }
 
             $member = Members::create(array_merge($validatedData, ['joinedDate' => date('Y-m-d')]));
 

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {RegistrationService} from '../../services/registration/registration.service';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-signup',
@@ -11,15 +13,52 @@ export class SignupComponent implements OnInit {
   name: string;
   email: string;
   password: string;
-  confirm_password: string;
+  confirmPassword: string;
+  gender = '';
+  errorMsg = '';
+  response: any;
 
-  constructor() { }
+  constructor(private api: RegistrationService, private router: Router) {
+  }
 
   ngOnInit(): void {
   }
 
   signUp() {
-  	
+    this.errorMsg = '';
+
+    const data = {
+      fullname: this.name,
+      email: this.email,
+      password: this.password,
+      gender: this.gender
+    };
+
+    if (!data.fullname || !data.email || !data.password || !data.gender) {
+      this.errorMsg = 'All data must be filled';
+      return;
+    }
+
+    if (data.password !== this.confirmPassword) {
+      this.errorMsg = 'Please check your confirm password';
+      return;
+    }
+
+    console.log(data);
+    this.api.doRegister(data).subscribe(res => {
+      console.log('success : ' + JSON.stringify(res));
+      this.response = res;
+
+      if (!res.success) {
+        this.errorMsg = res.message;
+        return;
+      }
+
+      this.router.navigate(['\login']);
+    }, err => {
+      console.log('error : ' + JSON.stringify(err));
+      this.response = err;
+    });
   }
 
 }
