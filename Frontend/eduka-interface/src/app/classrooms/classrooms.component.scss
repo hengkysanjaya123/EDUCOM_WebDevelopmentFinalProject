@@ -1,4 +1,4 @@
-  //nav {
+//nav {
 //	a {
 //		color: black;
 //	}
@@ -63,24 +63,34 @@
 }
 
 .select-room {
-  // img {
-  //   display: inline-block;
-  // }
-  // margin-right: 15px;
-  width: 40%;
+  width: 300px;
   align-content: flex-start;
+  margin-right: 30px;
 
+  .room-item {
+    background: gray;
+    // margin-right: 15px;
+    // width: 80%;
+    //height: 219px;
+    width: 300px;
+
+    h4 {
+      color: black;
+      font-size: 1.5vw;
+    }
+  }
+
+  .name {
+    padding: 15px;
+    margin-left: -15px;
+    font-size: 22px;
+  }
+
+  .description {
+    width: 300px;
+  }
 }
-.room-item {
-  background: gray;
-  // margin-right: 15px;
-  // width: 80%;
-  height: 70%;
-  h4 {
-    color: black;
-    font-size: 1.5vw;
-  }  
-}
+
 
 .heading-container {
   padding: 3em;
@@ -93,7 +103,7 @@
   flex-wrap: nowrap;
   padding-left: 3em;
   background-color: white;
-  height: 350px;
+  height: 500px;
   display: flex;
   overflow-x: scroll;
   -ms-overflow-style: none; /* Internet Explorer 10+ */
@@ -289,6 +299,6 @@
 }
 
 
-.room-heading{
+.room-heading {
   color: black;
 }

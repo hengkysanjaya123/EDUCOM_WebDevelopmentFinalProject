@@ -23,7 +23,11 @@ export class RoomService {
   }
 
   getRooms() {
-    return this.http.get('http://127.0.0.1:8000/api/rooms');
+    return this.http.get(apiUrl + '/rooms/mine');
+  }
+
+  getSharedRooms() {
+    return this.http.get(apiUrl +  '/rooms/shared');
   }
 
   joinRoom(data): Observable<HTTPCustomResponse> {

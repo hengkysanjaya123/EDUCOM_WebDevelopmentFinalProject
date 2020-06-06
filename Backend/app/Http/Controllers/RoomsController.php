@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Rooms;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 
 class RoomsController extends BaseController
@@ -13,6 +14,22 @@ class RoomsController extends BaseController
         $rooms = Rooms::all();
         return $rooms;
 //        return $this->sendResponse($rooms, 'Data retrieved successfully');
+    }
+
+    public function getMyRooms()
+    {
+        $rooms = DB::table('rooms')->where('owner', '=', '1')->get();
+        return $rooms;
+    }
+
+    public function getSharedRooms()
+    {
+        $roomParticipants = DB::table('room_participants')->where('member_id', '=', '1')
+            ->join('rooms', 'rooms.roomCode', '=', 'room_participants.roomCode')
+            ->where('rooms.owner', '!=', '1')
+            ->select('rooms.*')
+            ->get();
+        return $roomParticipants;
     }
 
     public function show($id)
@@ -44,7 +61,7 @@ class RoomsController extends BaseController
     public function store(Request $request)
     {
         $roomCode = $this->createRandomPassword();
-        $room = Rooms::create(array_merge($request->all(), ['roomCode' => $roomCode]));
+        $room = Rooms::create(array_merge($request->all(), ['roomCode' => $roomCode, 'createdDate' => date('Y-m-d')]));
 
         return $this->sendResponse($room, 'Data added successfully');
     }
