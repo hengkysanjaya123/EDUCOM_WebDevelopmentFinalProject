@@ -1,47 +1,55 @@
-<div class="container">
-  <div class="signup-container">
-    <h1>Sign Up</h1>
-    <br>
-    <div class="alert alert-danger" role="alert" *ngIf="errorMsg">
-      {{errorMsg}}
-    </div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6 left-side">
+      <div class="signup-container">
+        <h1>Sign Up</h1>
+        <br>
+        <div class="alert alert-danger" role="alert" *ngIf="errorMsg">
+          {{errorMsg}}
+        </div>
 
-    <div class="row">
-      <div class="input-field col s6 m4 l4">
-        <input type="text" [(ngModel)]="name" placeholder="Full Name">
-      </div>
-    </div>
-    <div class="row">
-      <div class="input-field col s6 m4 l4">
-        <input type="email" [(ngModel)]="email" placeholder="Email">
-      </div>
-    </div>
-    <div class="row">
-      <div class="input-field col s6 m4 l4">
-        <input type="password" [(ngModel)]="password" placeholder="Password">
-      </div>
-    </div>
-    <div class="row">
-      <div class="input-field col s6 m4 l4">
-        <input type="password" [(ngModel)]="confirmPassword" placeholder="Confirm Password">
-      </div>
-    </div>
-    <div class="row">
-      <div class="input-field col s6 m4 l4">
-        <select class="browser-default" [(ngModel)]="gender">
-          <option value="" disabled selected>--Select Gender--</option>
-          <option value="Male">Male</option>
-          <option value="Female">Female</option>
-          <option value="Prefer not to say">Prefer not to say</option>
-        </select>
-        <!-- 		    <label>Gender</label>
-         -->      </div>
-    </div>
-    <div class="row">
-      <button (click)="signUp()" class="btn-large waves-effect eduka-pink" type="submit" name="signUp">Sign Up</button>
-    </div>
+        <div class="row">
+          <div class="input-field col s6 m4 l4">
+            <input type="text" [(ngModel)]="name" placeholder="Full Name">
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6 m4 l4">
+            <input type="email" [(ngModel)]="email" placeholder="Email">
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6 m4 l4">
+            <input type="password" [(ngModel)]="password" placeholder="Password">
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6 m4 l4">
+            <input type="password" [(ngModel)]="confirmPassword" placeholder="Confirm Password">
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6 m4 l4">
+            <select class="browser-default combobox-gender" [(ngModel)]="gender">
+              <option value="" disabled selected>--Select Gender--</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Prefer not to say">Prefer not to say</option>
+            </select>
+            <!-- 		    <label>Gender</label>
+             -->      </div>
+        </div>
+        <div class="row">
+          <button (click)="signUp()" class="waves-effect eduka-pink btn-signup" type="submit" name="signUp">Sign Up</button>
+        </div>
 
+      </div>
+    </div>
+    <div class="col-md-6 right-side">
+
+    </div>
   </div>
 </div>
 
-{{ response |  json}}
+<!--{{ response |  json}}-->
+<app-footer></app-footer>

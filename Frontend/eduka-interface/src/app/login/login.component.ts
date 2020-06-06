@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthService} from '../../services/auth/auth.service';
 import {HTTPCustomResponse} from '../../models/response.model';
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-login',
@@ -15,16 +15,19 @@ export class LoginComponent implements OnInit {
 
   response: HTTPCustomResponse = null;
   errorMsg = '';
+  message = '';
 
-  constructor(private api: AuthService, private router: Router) {
+  constructor(private api: AuthService, private router: Router, private route: ActivatedRoute) {
   }
 
   ngOnInit(): void {
+    this.message = this.route.snapshot .paramMap.get('message');
   }
 
   doLogin() {
     this.response = null;
     this.errorMsg = '';
+    this.message = '';
 
     const data = {
       email: this.email,
@@ -45,7 +48,7 @@ export class LoginComponent implements OnInit {
           return;
         }
 
-        this.router.navigate(['/room']);
+        this.router.navigate(['/classrooms']);
       }, err => {
         console.log('error:' + err.json);
         this.response = null;

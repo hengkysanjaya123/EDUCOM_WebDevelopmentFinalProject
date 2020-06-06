@@ -1,17 +1,34 @@
-<nav>
-  <div class="nav-wrapper">
-    <a href="#" class="brand-logo" routerLink="/">&nbsp;EDUKA</a>
-    <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li> <a href="#home">Home</a></li>
-      <li> <a href="#about">About</a></li>
-      <li> <a href="#features">Features</a></li>
-      <li> <a href="#">Pricing</a></li>
-    </ul>
+<!--<nav>-->
+<!--  <div class="nav-wrapper">-->
+<!--    <a href="#" class="brand-logo" routerLink="/">Educom</a>-->
+<!--    <ul id="nav-mobile" class="right hide-on-med-and-down">-->
+<!--      <li> <a href="#home">Home</a></li>-->
+<!--      <li> <a href="#about">About</a></li>-->
+<!--      <li> <a href="#features">Features</a></li>-->
+<!--      <li> <a href="#">Pricing</a></li>-->
+<!--    </ul>-->
+<!--  </div>-->
+<!--</nav>-->
+
+<!-- Header -->
+<header id="header">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="inner">
+        <a href="#" class="logo" routerLink="/">Educom</a>
+        <nav id="nav" class="navigation">
+          <a href="/">Home</a>
+          <a href="#" routerLink="/logout">Logout</a>
+        </nav>
+        <a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+      </div>
+    </div>
   </div>
-</nav>
+</header>
+
 
 <div class="room-manager-container">
-	<br><br><br>
+	<br>
 	<div class="center-align">
 		<h2 class="rmc-tc"> <b>Stay Connected with all your</b></h2><h2 class="rmc-tc"><b>teammates and friends!</b></h2>
 	</div>
@@ -25,7 +42,7 @@
 </div>
 
 <div class="my-classrooms-container">
-	<h2 class="rmc-tc"><b>Your Rooms</b></h2>	
+	<h2 class="rmc-tc"><b>Your Rooms</b></h2>
 	<div class="pink-line"></div>
 	<div class="select-room" scrollX="true" *ngFor="let room of rooms">
 		<p class="name"> {{room.name}} </p>

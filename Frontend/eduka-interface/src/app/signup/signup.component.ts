@@ -54,7 +54,7 @@ export class SignupComponent implements OnInit {
         return;
       }
 
-      this.router.navigate(['\login']);
+      this.router.navigate(['\login', {message : 'Registration success! You can Login now :)'}]);
     }, err => {
       console.log('error : ' + JSON.stringify(err));
       this.response = err;
