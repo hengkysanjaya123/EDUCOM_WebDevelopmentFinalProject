@@ -12,6 +12,7 @@ import { RoomComponent } from './room/room.component';
 import { SignupComponent } from './signup/signup.component';
 import { CreateroomComponent } from './createroom/createroom.component';
 import { JoinroomComponent } from './joinroom/joinroom.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { JoinroomComponent } from './joinroom/joinroom.component';
     RoomComponent,
     SignupComponent,
     CreateroomComponent,
-    JoinroomComponent
+    JoinroomComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
