@@ -15,11 +15,11 @@ class CreateRoomParticipantsTable extends Migration
     {
         Schema::create('room_participants', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('room_id');
+            $table->string('roomCode');
             $table->unsignedBigInteger('member_id');
             $table->string('status');
 
-            $table->foreign('room_id')->references('id')->on('rooms');
+//            $table->foreign('room_id')->references('id')->on('rooms');
             $table->foreign('member_id')->references('id')->on('members');
             $table->timestamps();
         });

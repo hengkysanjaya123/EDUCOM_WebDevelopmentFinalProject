@@ -18,6 +18,7 @@ class CreateRoomsTable extends Migration
             $table->string('name');
             $table->string('description');
             $table->dateTime('createdDate');
+            $table->string('roomCode')->unique();
             $table->unsignedBigInteger('owner');
 
             $table->foreign('owner')->references('id')->on('members');
