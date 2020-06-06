@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {HttpService} from '../http.service';
+import { RoomService } from '../../services/room/room.service';
 
 
 @Component({
@@ -12,7 +12,7 @@ export class ClassroomsComponent implements OnInit {
 
   rooms: Object;
 
-  constructor(private _http: HttpService) {
+  constructor(private _http: RoomService) {
   }
 
   ngOnInit(): void {
