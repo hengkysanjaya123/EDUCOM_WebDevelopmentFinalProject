@@ -36,5 +36,11 @@ export class RoomService {
         tap((response: HTTPCustomResponse) => console.log('result: ' + JSON.stringify(response)))
       );
   }
+  createRoom(data): Observable<HTTPCustomResponse> {
+    return this.http.post<HTTPCustomResponse>(apiUrl + '/rooms', data, httpOptions)
+      .pipe(
+        tap((response: HTTPCustomResponse) => console.log('result: ' + JSON.stringify(response)))
+      );
+  }
 
 }
