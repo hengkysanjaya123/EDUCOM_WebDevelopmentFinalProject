@@ -22,10 +22,31 @@ class RoomsController extends BaseController
 //        return $this->sendResponse($room, 'Data retrieved successfully');
     }
 
+    private function createRandomPassword()
+    {
+
+        $chars = "abcdefghijkmnopqrstuvwxyz023456789";
+        srand((double)microtime() * 1000000);
+        $i = 0;
+        $pass = '';
+
+        while ($i <= 7) {
+            $num = rand() % 33;
+            $tmp = substr($chars, $num, 1);
+            $pass = $pass . $tmp;
+            $i++;
+        }
+
+        return $pass;
+
+    }
+
     public function store(Request $request)
     {
-        $room = Rooms::create($request->all());
-        return $this->sendResponse($room, 'Data added sucessfully');
+        $roomCode = $this->createRandomPassword();
+        $room = Rooms::create(array_merge($request->all(), ['roomCode' => $roomCode]));
+
+        return $this->sendResponse($room, 'Data added successfully');
     }
 
     public function update(Request $request, $id)

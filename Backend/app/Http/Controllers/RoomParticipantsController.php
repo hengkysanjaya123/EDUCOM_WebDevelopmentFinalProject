@@ -25,6 +25,11 @@ class RoomParticipantsController extends BaseController
 
     public function store(Request $request)
     {
+        $validatedData = $request->validate([
+            'roomCode' => 'required',
+            'member_id' => 'required',
+        ]);
+
         $roomParticipants = RoomParticipants::create($request->all());
         return $this->sendResponse($roomParticipants, 'Data added successfully');
     }
