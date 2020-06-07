@@ -5,18 +5,18 @@
 		<div class="alert alert-danger" role="alert" *ngIf="errorMsg">
       		{{errorMsg}}
     	</div>
-		<div class="row">	
+		<div class="row">
 			<div class="input-field col s6 m4 l4">
 				<input type="text" [(ngModel)]="roomName" placeholder="Room Name">
 			</div>
 		</div>
-		<div class="row">	
+		<div class="row">
 			<div class="input-field col s6 m4 l4">
-				<textarea id="textarea1" [(ngModel)]="roomDescription" class="materialize-textarea" placeholder="Description"></textarea>			
+				<textarea id="textarea1" [(ngModel)]="roomDescription" class="materialize-textarea" placeholder="Description"></textarea>
 			</div>
 		</div>
 		<div class="row">
-			<button (click)="createRoom()"class="btn-large waves-effect eduka-pink" type="submit" name="createRoom">Create Room</button>
-		</div>	
+			<button (click)="createRoom()"class="btn-large waves-effect eduka-pink" type="submit" name="createRoom" [class.spinner]="loading" [disabled]="loading">Create Room</button>
+		</div>
 	</div>
 </div>

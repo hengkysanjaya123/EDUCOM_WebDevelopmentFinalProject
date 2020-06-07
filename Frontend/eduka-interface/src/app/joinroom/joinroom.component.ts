@@ -11,6 +11,7 @@ import {AccountServiceService} from "../../services/AccountService/account-servi
 export class JoinroomComponent implements OnInit {
   roomCode: string;
   errorMsg = '';
+  loading = false;
 
   constructor(private api: RoomService, private router: Router, private accountService: AccountServiceService) {
   }
@@ -31,7 +32,9 @@ export class JoinroomComponent implements OnInit {
       roomCode: this.roomCode,
       member_id: this.accountService.userValue.id
     };
+    this.loading = true;
     this.api.joinRoom(data).subscribe(res => {
+      this.loading = false;
       console.log('success: ' + JSON.stringify(res));
       if (!res.success) {
         this.errorMsg = res.message;
@@ -40,6 +43,7 @@ export class JoinroomComponent implements OnInit {
 
       this.router.navigate(['\classrooms', {message: 'Room joined successfully'}]);
     }, err => {
+      this.loading = false;
       console.log('error: ' + JSON.stringify(err));
     });
   }

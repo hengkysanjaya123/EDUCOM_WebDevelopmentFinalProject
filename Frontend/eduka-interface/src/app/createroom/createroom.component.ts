@@ -10,12 +10,16 @@ import {AccountServiceService} from "../../services/AccountService/account-servi
 })
 export class CreateroomComponent implements OnInit {
 
-  constructor(private api: RoomService, private router: Router, private accountService: AccountServiceService) {
-  }
-
   roomName: string;
   errorMsg: string;
   roomDescription: string;
+  loading = false;
+
+  constructor(private api: RoomService, private router: Router, private accountService: AccountServiceService) {
+  }
+
+
+
 
   ngOnInit(): void {
     this.accountService.hasAccess();
@@ -33,7 +37,10 @@ export class CreateroomComponent implements OnInit {
       description: this.roomDescription,
       owner: this.accountService.userValue.id
     };
+    this.loading = true;
     this.api.createRoom(data).subscribe(res => {
+      this.loading = false;
+
       console.log('success: ' + JSON.stringify(res));
       if (!res.success) {
         this.errorMsg = res.message;
@@ -41,6 +48,7 @@ export class CreateroomComponent implements OnInit {
       }
       this.router.navigate(['\classrooms', {message: 'Room created successfully'}]);
     }, err => {
+      this.loading = false;
       console.log('error: ' + JSON.stringify(err));
     });
   }
