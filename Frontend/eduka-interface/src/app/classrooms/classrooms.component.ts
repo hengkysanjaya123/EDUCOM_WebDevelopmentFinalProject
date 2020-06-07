@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {RoomService} from '../../services/room/room.service';
 import {ActivatedRoute} from "@angular/router";
+import {AccountServiceService} from "../../services/AccountService/account-service.service";
 
 
 @Component({
@@ -14,7 +15,7 @@ export class ClassroomsComponent implements OnInit {
   rooms: any;
   sharedRooms: any;
 
-  constructor(private _http: RoomService, private route: ActivatedRoute) {
+  constructor(private _http: RoomService, private route: ActivatedRoute, private accountService: AccountServiceService) {
     this.message = this.route.snapshot.paramMap.get('message');
   }
 
@@ -23,6 +24,8 @@ export class ClassroomsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.accountService.hasAccess();
+
     this._http.getRooms().subscribe(data => {
         this.rooms = data;
         console.log(this.rooms);
@@ -36,6 +39,10 @@ export class ClassroomsComponent implements OnInit {
     // setTimeout(function () {
     //   console.log('message: ' + this.message);
     // }, 3000);
+  }
+
+  logout() {
+    this.accountService.logout();
   }
 
 }

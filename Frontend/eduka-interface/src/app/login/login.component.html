@@ -23,7 +23,7 @@
           </div>
         </div>
         <div class="row btn-login-wrapper">
-          <button class="waves-effect eduka-pink btn-login" type="submit" name="signIn" (click)="doLogin()">Login
+          <button class="waves-effect eduka-pink btn-login" type="submit" name="signIn" (click)="doLogin()" [class.spinner]="loading" [disabled]="loading">Login
           </button>
         </div>
         <br>

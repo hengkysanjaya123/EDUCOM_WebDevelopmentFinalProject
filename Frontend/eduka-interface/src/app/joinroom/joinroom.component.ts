@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {RoomService} from '../../services/room/room.service';
 import {Router} from "@angular/router";
+import {AccountServiceService} from "../../services/AccountService/account-service.service";
 
 @Component({
   selector: 'app-joinroom',
@@ -11,10 +12,11 @@ export class JoinroomComponent implements OnInit {
   roomCode: string;
   errorMsg = '';
 
-  constructor(private api: RoomService, private router: Router) {
+  constructor(private api: RoomService, private router: Router, private accountService: AccountServiceService) {
   }
 
   ngOnInit(): void {
+    this.accountService.hasAccess();
   }
 
   joinRoom() {

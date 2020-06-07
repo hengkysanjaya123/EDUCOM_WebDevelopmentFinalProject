@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {AccountServiceService} from "../../services/AccountService/account-service.service";
 
 @Component({
   selector: 'app-room',
@@ -7,12 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RoomComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(private accountService: AccountServiceService) {
   }
 
-  doSomething(){
+  ngOnInit(): void {
+    this.accountService.hasAccess();
+  }
+
+  doSomething() {
     alert('test');
+  }
+
+  logout() {
+    this.accountService.logout();
   }
 }
