@@ -8,6 +8,7 @@ import { RoomComponent } from './room/room.component';
 import { SignupComponent } from './signup/signup.component';
 import { CreateroomComponent } from './createroom/createroom.component';
 import { JoinroomComponent } from './joinroom/joinroom.component';
+import { CreatechannelComponent } from './createchannel/createchannel.component';
 
 const routes: Routes = [
 	{ path: '', component: HomeComponent},
@@ -16,7 +17,8 @@ const routes: Routes = [
 	{ path: 'room', component: RoomComponent},
 	{ path: 'signup', component: SignupComponent},
 	{ path: 'createroom', component: CreateroomComponent},
-	{ path: 'joinroom', component: JoinroomComponent}
+	{ path: 'joinroom', component: JoinroomComponent},	
+	{ path: 'createchannel', component: CreatechannelComponent}
 ];
 
 @NgModule({
