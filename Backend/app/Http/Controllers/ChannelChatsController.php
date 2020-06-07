@@ -25,7 +25,7 @@ class ChannelChatsController extends Controller
 
     public function store(Request $request)
     {
-        $channelChat = ChannelChats::create($request->all());
+        $channelChat = ChannelChats::create(array_merge($request->all(), ['datetime' => date('Y-m-d'), 'announced' => 'no']));
         return $this->sendResponse($channelChat, 'Data added successfully');
     }
 

@@ -36,7 +36,7 @@ class RoomParticipantsController extends BaseController
             return $this->sendResponse('', 'Room Code not found', false);
         }
 
-        $isMemberInRoom = DB::table('room_participants')->where('member_id', '=', $request->member_id)->count();
+        $isMemberInRoom = DB::table('room_participants')->where('member_id', '=', $request->member_id)->where('roomCode', '=', $request->roomCode)->count();
         if ($isMemberInRoom > 0) {
             return $this->sendResponse('', 'You are already in this room', false);
         }

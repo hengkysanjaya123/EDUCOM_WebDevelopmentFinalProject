@@ -48,7 +48,7 @@
               <span class="time-right">11:01</span>
             </div>
           </div>
-          <input type="text" class="message-box" placeholder="type your message here...">
+          <input type="text" class="message-box" placeholder="type your message here..." (keyup.enter)="sendMessage($event)">
         </div>
       </div>
     </div>

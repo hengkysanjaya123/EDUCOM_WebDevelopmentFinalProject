@@ -41,7 +41,7 @@ export class JoinroomComponent implements OnInit {
         return;
       }
 
-      this.router.navigate(['\classrooms', {message: 'Room joined successfully'}]);
+      this.router.navigate(['\classrooms', {message: 'Joined room success!'}]);
     }, err => {
       this.loading = false;
       console.log('error: ' + JSON.stringify(err));

@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {AccountServiceService} from "../../services/AccountService/account-service.service";
+import {AccountServiceService} from '../../services/AccountService/account-service.service';
 
 @Component({
   selector: 'app-room',
@@ -21,5 +21,21 @@ export class RoomComponent implements OnInit {
 
   logout() {
     this.accountService.logout();
+  }
+
+  sendMessage(item) {
+    const text = item.target.value;
+    const currentUser = this.accountService.userValue;
+
+    const data = {
+      room_channel_id: 1,
+      name: '',
+      message: ''
+    };
+    if (!text) {
+      return;
+    }
+
+    alert(text);
   }
 }
