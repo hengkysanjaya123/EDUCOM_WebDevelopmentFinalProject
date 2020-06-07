@@ -37,6 +37,7 @@
             <button class="waves-effect">#Announcements</button>
 
           </div>
+          <button class="createchannel-button waves-effect" [routerLink]="['/createchannel']">Create Channel</button>
           <div class="chat-box">
 <!--            Result : {{channel_chats|json}}-->
             <div class="sent-message" *ngFor="let chat of channel_chats.data">

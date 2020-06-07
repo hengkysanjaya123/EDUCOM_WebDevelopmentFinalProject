@@ -39,7 +39,7 @@
   //border-style: solid;
   //border-color: #fe47aa;
   //border-width: 5px;
-  height: 655px;
+  height: 600px;
   width: 31.85%;
   background-color: #575e68;
   overflow-y: scroll;
@@ -65,6 +65,21 @@
   }
 }
 
+.createchannel-button {
+  // float: left;
+  width: 31.85%;
+  background-color: white;
+  color: black;
+  padding: 15px;
+  position: absolute;  
+  height: 55px;
+  bottom: 0;
+  left: 1;
+  margin-left: -400px;
+  margin-bottom: 20px;
+  // margin-top: -59px;
+  // margin-right: -35px;
+}
 .bottom-section {
   width: 100%;
 }
@@ -88,41 +103,26 @@
   //margin-left: 0.75%;
   -ms-overflow-style: none; /* Internet Explorer 10+ */
   scrollbar-width: none; /* Firefox */
-  h6 {
-    color: white;
-    font-size: 1.5vw;
-    margin-left: 0.5em;
-  }
+}
 
-  button {
-    width: 100%;
-    height: 60px;
-  }
+.message-box {
+  float: right;
+  width: 65.5%;
+  height: 25px;
+  background-color: white;
+  color: black;
+  padding: 15px;
+  margin-top: -59px;
+  margin-left: -35px;
 }
 
 .sent-message {
-  // width: 100%;
-  // height: 4%;
-  // background-color: white;
-  // border-style: solid;
-  // border-color: black;
-  // color: black;
-  // border-top-width: 1px;
-  // border-left-width: 1px;
-  // border-right-width: 1px;
-  // border-bottom-width: 0.5px;
-  // h6 {
-  //   color: black;
-  //   display: inline;
-  // }
-  // p {
-  //   display: inline;
-  // }
     border: 2px solid #dedede;
     background-color: #f1f1f1;
     border-radius: 5px;
     padding: 10px;
     margin: 10px 0;
+    margin-top: 5px;
 }
 
 /* Clear floats */
@@ -185,17 +185,6 @@
   padding-left: 1%; 
 }
 
-
-.message-box {
-  float: right;
-  width: 65.5%;
-  height: 25px;
-  background-color: white;
-  color: black;
-  padding: 15px;
-  margin-top: -59px;
-  margin-left: -35px;
-}
 
 .chat-box::-webkit-scrollbar {
   width: 10px;

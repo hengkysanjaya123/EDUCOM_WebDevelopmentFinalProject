@@ -13,6 +13,7 @@ import {SignupComponent} from './signup/signup.component';
 import {CreateroomComponent} from './createroom/createroom.component';
 import {JoinroomComponent} from './joinroom/joinroom.component';
 import {FooterComponent} from './footer/footer.component';
+import { CreatechannelComponent } from './createchannel/createchannel.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {FooterComponent} from './footer/footer.component';
     SignupComponent,
     CreateroomComponent,
     JoinroomComponent,
-    FooterComponent
+    FooterComponent,
+    CreatechannelComponent
   ],
   imports: [
     BrowserModule,
