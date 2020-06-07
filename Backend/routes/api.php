@@ -51,6 +51,8 @@ Route::delete('room_participants/{id}', 'RoomParticipantsController@delete');
 // room channels
 Route::get('room_channels', 'RoomChannelsController@index');
 Route::get('room_channels/{id}', 'RoomChannelsController@show');
+Route::get('room_channels/room/{id}', 'RoomChannelsController@filterbyroom');
+
 Route::post('room_channels', 'RoomChannelsController@store');
 Route::put('room_channels/{id}', 'RoomChannelsController@update');
 Route::delete('room_channels/{id}', 'RoomChannelsController@delete');

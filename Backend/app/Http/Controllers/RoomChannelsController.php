@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\RoomChannels;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class RoomChannelsController extends BaseController
 {
@@ -19,7 +20,15 @@ class RoomChannelsController extends BaseController
     {
         $roomChannel = RoomChannels::find($id)::with('room')->first();
         return $roomChannel;
-        
+
+//        return $this->sendResponse($roomChannel, 'Data retrieved successfully');
+    }
+
+    public function filterbyroom($id)
+    {
+        $roomChannel = DB::table('room_channels')->where('room_id', '=', $id)->get();
+        return $roomChannel;
+
 //        return $this->sendResponse($roomChannel, 'Data retrieved successfully');
     }
 
