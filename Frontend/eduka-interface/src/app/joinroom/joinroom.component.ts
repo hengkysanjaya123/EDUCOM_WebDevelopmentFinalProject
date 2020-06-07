@@ -27,10 +27,9 @@ export class JoinroomComponent implements OnInit {
       return;
     }
 
-    // TODO: change to current signed in member_id
     const data = {
       roomCode: this.roomCode,
-      member_id: 1
+      member_id: this.accountService.userValue.id
     };
     this.api.joinRoom(data).subscribe(res => {
       console.log('success: ' + JSON.stringify(res));

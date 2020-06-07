@@ -19,7 +19,7 @@ class AuthController extends BaseController
         $password = $request->password;
 
         $member = DB::table('members')->where('email', '=', $email)
-            ->where('password', '=', $password)->select(['fullname', 'email', 'gender', 'joinedDate'])->first();
+            ->where('password', '=', $password)->select(['id','fullname', 'email', 'gender', 'joinedDate'])->first();
         if ($member == null) {
             return $this->sendResponse('', 'Username and Password incorrect', false);
         } else {

@@ -38,7 +38,7 @@ export class AccountServiceService {
 
   hasAccess() {
     if (this.userValue == null) {
-      alert("Please login first to get access to this page!");
+      alert('Please login first to get access to this page!');
       this.router.navigate(['/login']);
     }
   }

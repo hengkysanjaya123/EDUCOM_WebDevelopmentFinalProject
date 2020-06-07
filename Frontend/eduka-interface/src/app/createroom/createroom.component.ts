@@ -31,7 +31,7 @@ export class CreateroomComponent implements OnInit {
     const data = {
       name: this.roomName,
       description: this.roomDescription,
-      owner: '1'
+      owner: this.accountService.userValue.id
     };
     this.api.createRoom(data).subscribe(res => {
       console.log('success: ' + JSON.stringify(res));

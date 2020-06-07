@@ -18,6 +18,8 @@ export class SignupComponent implements OnInit {
   errorMsg = '';
   response: any;
 
+  loading = false;
+
   constructor(private api: RegistrationService, private router: Router) {
   }
 
@@ -45,7 +47,9 @@ export class SignupComponent implements OnInit {
     }
 
     console.log(data);
+    this.loading = true;
     this.api.doRegister(data).subscribe(res => {
+      this.loading = false;
       console.log('success : ' + JSON.stringify(res));
       this.response = res;
 
@@ -56,6 +60,7 @@ export class SignupComponent implements OnInit {
 
       this.router.navigate(['\login', {message : 'Registration success! You can Login now :)'}]);
     }, err => {
+      this.loading = false;
       console.log('error : ' + JSON.stringify(err));
       this.response = err;
     });

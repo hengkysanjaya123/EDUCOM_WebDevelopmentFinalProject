@@ -40,7 +40,7 @@
              -->      </div>
         </div>
         <div class="row">
-          <button (click)="signUp()" class="waves-effect eduka-pink btn-signup" type="submit" name="signUp">Sign Up</button>
+          <button (click)="signUp()" class="waves-effect eduka-pink btn-signup" type="submit" name="signUp" [class.spinner]="loading" [disabled]="loading">Sign Up</button>
         </div>
 
       </div>

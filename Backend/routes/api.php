@@ -32,8 +32,8 @@ Route::delete('members/{id}', 'MembersController@delete');
 
 // rooms
 Route::get('rooms', 'RoomsController@index');
-Route::get('rooms/mine','RoomsController@getMyRooms');
-Route::get('rooms/shared','RoomsController@getSharedRooms');
+Route::get('rooms/mine/{id}','RoomsController@getMyRooms');
+Route::get('rooms/shared/{id}','RoomsController@getSharedRooms');
 
 
 Route::get('rooms/{id}', 'RoomsController@show');
