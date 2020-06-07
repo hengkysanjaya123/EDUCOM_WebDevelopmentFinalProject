@@ -10,6 +10,16 @@
 				<input type="text" [(ngModel)]="channelName" placeholder="Channel Name">
 			</div>
 		</div>
+        <h6>&nbsp; Select Room Visibility</h6>
+        <div class="row">
+          <div class="input-field col s6 m4 l4">
+            <select class="browser-default combobox-gender" [(ngModel)]="visibility">
+              <option value="" disabled selected>--Select Room Visibility--</option>
+              <option value="public">Public </option>
+              <option value="private">Private</option>
+            </select>
+   		  </div>
+        </div>
 		<div class="row">
 			<button (click)="createChannel()"class="btn-large waves-effect eduka-pink" type="submit" name="createChannel" [class.spinner]="loading" [disabled]="loading">Create Channel</button>
 		</div>
