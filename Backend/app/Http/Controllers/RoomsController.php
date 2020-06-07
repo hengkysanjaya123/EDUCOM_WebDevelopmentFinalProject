@@ -16,17 +16,17 @@ class RoomsController extends BaseController
 //        return $this->sendResponse($rooms, 'Data retrieved successfully');
     }
 
-    public function getMyRooms()
+    public function getMyRooms(Request $request, $id)
     {
-        $rooms = DB::table('rooms')->where('owner', '=', '1')->get();
+        $rooms = DB::table('rooms')->where('owner', '=', $id)->get();
         return $rooms;
     }
 
-    public function getSharedRooms()
+    public function getSharedRooms(Request $request, $id)
     {
-        $roomParticipants = DB::table('room_participants')->where('member_id', '=', '1')
+        $roomParticipants = DB::table('room_participants')->where('member_id', '=', $id)
             ->join('rooms', 'rooms.roomCode', '=', 'room_participants.roomCode')
-            ->where('rooms.owner', '!=', '1')
+            ->where('rooms.owner', '!=', $id)
             ->select('rooms.*')
             ->get();
         return $roomParticipants;
