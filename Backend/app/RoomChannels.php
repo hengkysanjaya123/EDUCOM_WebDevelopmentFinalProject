@@ -13,4 +13,9 @@ class RoomChannels extends Eloquent
     {
         $this->belongsTo('App\Rooms');
     }
+
+    public function channel_chats()
+    {
+        return $this->hasMany('App\ChannelChats');
+    }
 }

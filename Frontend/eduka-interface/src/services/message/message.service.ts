@@ -28,8 +28,8 @@ export class MessageService {
       );
   }
 
-  loadMessage(data): Observable<HTTPCustomResponse> {
-    return this.http.get<HTTPCustomResponse>(apiUrl, httpOptions)
+  loadMessage(room_channel_id): Observable<HTTPCustomResponse> {
+    return this.http.get<HTTPCustomResponse>(apiUrl + '/room_channel/' + room_channel_id, httpOptions)
       .pipe(
         tap((response: HTTPCustomResponse) => console.log('result: ' + JSON.stringify(response)))
       );

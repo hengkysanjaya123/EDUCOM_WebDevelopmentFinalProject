@@ -35,20 +35,18 @@
             <!-- ngFor (loop through channel list in room)	-->
             <button class="waves-effect" (click)="doSomething()">#General</button>
             <button class="waves-effect">#Announcements</button>
+
           </div>
           <div class="chat-box">
-            <div class="sent-message">
+<!--            Result : {{channel_chats|json}}-->
+            <div class="sent-message" *ngFor="let chat of channel_chats.data">
               <!-- <img src="/w3images/bandmember.jpg" alt="Avatar"> -->
-              <p><b>Hengky</b> Hello. How are you today?</p>
-              <span class="time-right">11:00</span>
-            </div>
-            <div class="sent-message">
-              <!-- <img src="/w3images/bandmember.jpg" alt="Avatar"> -->
-              <p><b>Ryan</b> I am good sir</p>
-              <span class="time-right">11:01</span>
+              <p><b>{{chat.name}}:</b> {{chat.message}}</p>
+              <span class="time-right">{{chat.datetime}}</span>
             </div>
           </div>
-          <input type="text" class="message-box" placeholder="type your message here..." (keyup.enter)="sendMessage($event)">
+          <input type="text" class="message-box" placeholder="type your message here..."
+                 (keyup.enter)="sendMessage($event)">
         </div>
       </div>
     </div>
