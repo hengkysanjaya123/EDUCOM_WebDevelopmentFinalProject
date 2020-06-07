@@ -21,6 +21,12 @@ export class ChannelService {
   constructor(private http: HttpClient) { 
   }
 
+  getRoomChannels(id): Observable<HTTPCustomResponse>{
+    return this.http.get<HTTPCustomResponse>(apiUrl + '/room_channels/room/' + id, httpOptions)      
+    .pipe(
+        tap((response: HTTPCustomResponse) => console.log('result: ' + JSON.stringify(response)))
+      );;
+  }
   createChannel(data): Observable<HTTPCustomResponse> {
     return this.http.post<HTTPCustomResponse>(apiUrl + '/room_channels', data, httpOptions)
       .pipe(

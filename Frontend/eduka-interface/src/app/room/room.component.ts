@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {AccountServiceService} from '../../services/AccountService/account-service.service';
 import {MessageService} from "../../services/message/message.service";
 import {HTTPCustomResponse} from "../../models/response.model";
+import { ChannelService } from '../../services/channel/channel.service';
 
 @Component({
   selector: 'app-room',
@@ -11,14 +12,16 @@ import {HTTPCustomResponse} from "../../models/response.model";
 export class RoomComponent implements OnInit {
 
   channel_chats: HTTPCustomResponse;
+  room_channels: Object;
 
-  constructor(private api: MessageService, private accountService: AccountServiceService) {
+  constructor(private api: MessageService, private accountService: AccountServiceService, private channelapi: ChannelService) {
   }
 
   ngOnInit(): void {
     this.accountService.hasAccess();
 
     this.loadMessage();
+    this.loadChannels();
   }
 
   doSomething() {
@@ -29,6 +32,17 @@ export class RoomComponent implements OnInit {
     this.accountService.logout();
   }
 
+  loadChannels() {
+    const room_channel_id = '1';
+    this.channelapi.getRoomChannels(room_channel_id).subscribe(res => {
+          console.log('result: ' + JSON.stringify(res));
+          this.room_channels = res;
+        }, err => {
+          console.log('error: ' + JSON.stringify(err));
+          this.room_channels = null;
+        });
+
+  }
   sendMessage(item) {
     const text = item.target.value;
     item.target.value = '';

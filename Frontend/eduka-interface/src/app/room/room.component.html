@@ -33,9 +33,9 @@
         <div class="bottom-section">
           <div class="channel-list">
             <!-- ngFor (loop through channel list in room)	-->
-            <button class="waves-effect" (click)="doSomething()">#General</button>
-            <button class="waves-effect">#Announcements</button>
-
+            <div  *ngFor="let channel of room_channels">
+              <button class="waves-effect" (click)="doSomething()">{{ channel.channel_name }}</button>
+            </div>
           </div>
           <button class="createchannel-button waves-effect" [routerLink]="['/createchannel']">Create Channel</button>
           <div class="chat-box">
