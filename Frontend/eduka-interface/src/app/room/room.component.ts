@@ -6,6 +6,7 @@ import {Member} from "../../models/member.model";
 import {ChannelService} from '../../services/channel/channel.service';
 import {ActivatedRoute, Router} from "@angular/router";
 import {RoomService} from "../../services/room/room.service";
+import {Room} from "../../models/room.model";
 
 @Component({
   selector: 'app-room',
@@ -21,8 +22,8 @@ export class RoomComponent implements OnInit {
   };
   currentMember: Member;
   room_channels: Object;
-  // state: Observable<object>;
-  sub: any;
+
+  currentRoom: Room;
 
   constructor(private api: MessageService, private route: ActivatedRoute, private router: Router, private accountService: AccountServiceService, private channelapi: ChannelService, private roomApi: RoomService) {
   }
@@ -32,6 +33,8 @@ export class RoomComponent implements OnInit {
 
     this.currentMember = this.accountService.userValue;
 
+    this.currentRoom = this.roomApi.getRoom;
+    console.log('room: ' + JSON.stringify(this.currentRoom));
     this.loadChannels();
   }
 
