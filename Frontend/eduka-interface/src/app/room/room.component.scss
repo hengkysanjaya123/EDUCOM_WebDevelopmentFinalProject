@@ -67,7 +67,7 @@
 
 .createchannel-button {
   float: left;
-  width: 31.85%;
+  width: 32.25%;
   background-color: white;
   color: black;
   padding: 15px;
@@ -392,7 +392,9 @@
 
 
 @keyframes spinner {
-  to {transform: rotate(360deg);}
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .spinner:before {

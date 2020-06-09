@@ -44,6 +44,8 @@
             <!--            Result : {{channel_chats|json}}-->
             <div class="sent-message" *ngFor="let chat of channel_chats.data">
               <!-- <img src="/w3images/bandmember.jpg" alt="Avatar"> -->
+
+              <a (click)="announce()">Announce</a>
               <p><b>{{chat.name}}:</b> {{chat.message}}</p>
               <span class="time-right">{{chat.datetime}}</span>
             </div>

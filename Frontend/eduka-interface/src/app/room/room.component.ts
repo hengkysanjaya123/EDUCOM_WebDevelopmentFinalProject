@@ -110,4 +110,9 @@ export class RoomComponent implements OnInit {
       this.loading = false;
     });
   }
+
+  announce() {
+
+  }
+
 }
