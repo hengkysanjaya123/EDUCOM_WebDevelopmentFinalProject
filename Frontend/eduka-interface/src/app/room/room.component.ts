@@ -1,12 +1,13 @@
 import {Component, OnInit} from '@angular/core';
 import {AccountServiceService} from '../../services/AccountService/account-service.service';
-import {MessageService} from "../../services/message/message.service";
-import {HTTPCustomResponse} from "../../models/response.model";
-import {Member} from "../../models/member.model";
+import {MessageService} from '../../services/message/message.service';
+import {HTTPCustomResponse} from '../../models/response.model';
+import {Member} from '../../models/member.model';
 import {ChannelService} from '../../services/channel/channel.service';
-import {ActivatedRoute, Router} from "@angular/router";
-import {RoomService} from "../../services/room/room.service";
-import {Room} from "../../models/room.model";
+import {ActivatedRoute, Router} from '@angular/router';
+import {RoomService} from '../../services/room/room.service';
+import {Room} from '../../models/room.model';
+import {interval} from 'rxjs';
 
 @Component({
   selector: 'app-room',
@@ -24,6 +25,8 @@ export class RoomComponent implements OnInit {
   room_channels: Object;
 
   currentRoom: Room;
+  currentSelectedChannel: number = null;
+  sub: any;
 
   constructor(private api: MessageService, private route: ActivatedRoute, private router: Router, private accountService: AccountServiceService, private channelapi: ChannelService, private roomApi: RoomService) {
   }
@@ -36,10 +39,18 @@ export class RoomComponent implements OnInit {
     this.currentRoom = this.roomApi.getRoom;
     console.log('room: ' + JSON.stringify(this.currentRoom));
     this.loadChannels();
+
+    interval(1000).subscribe(x => {
+      if (this.currentSelectedChannel) {
+        console.log('fired');
+        this.loadMessage(this.currentSelectedChannel);
+      }
+    });
   }
 
   doSomething(item, event) {
     this.loadMessage(item.id);
+    this.currentSelectedChannel = item.id;
   }
 
   logout() {
@@ -69,7 +80,7 @@ export class RoomComponent implements OnInit {
     }
 
     const data = {
-      room_channel_id: 1,
+      room_channel_id: this.currentSelectedChannel,
       name: currentUser.fullname,
       message: text
     };
@@ -84,13 +95,13 @@ export class RoomComponent implements OnInit {
 
   }
 
-  loadMessage(room_channel_id = '1') {
+  loadMessage(room_channel_id = this.currentSelectedChannel) {
     // const room_channel_id = '1';
     this.api.loadMessage(room_channel_id).subscribe(res => {
-      console.log('result: ' + JSON.stringify(res));
+      // console.log('result: ' + JSON.stringify(res));
       this.channel_chats = res;
     }, err => {
-      console.log('error: ' + JSON.stringify(err));
+      // console.log('error: ' + JSON.stringify(err));
       this.channel_chats = null;
     });
   }

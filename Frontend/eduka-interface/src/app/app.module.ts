@@ -14,7 +14,7 @@ import {CreateroomComponent} from './createroom/createroom.component';
 import {JoinroomComponent} from './joinroom/joinroom.component';
 import {FooterComponent} from './footer/footer.component';
 import {CreatechannelComponent} from './createchannel/createchannel.component';
-import {DataStorage} from "../provider/DataStorage";
+import {DataStorage} from '../provider/DataStorage';
 
 @NgModule({
   declarations: [
