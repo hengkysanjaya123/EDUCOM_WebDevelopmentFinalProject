@@ -27,6 +27,7 @@ export class RoomComponent implements OnInit {
   currentRoom: Room;
   currentSelectedChannel: number = null;
   sub: any;
+  loading = false;
 
   constructor(private api: MessageService, private route: ActivatedRoute, private router: Router, private accountService: AccountServiceService, private channelapi: ChannelService, private roomApi: RoomService) {
   }
@@ -49,6 +50,7 @@ export class RoomComponent implements OnInit {
   }
 
   doSomething(item, event) {
+    this.loading = true;
     this.loadMessage(item.id);
     this.currentSelectedChannel = item.id;
   }
@@ -97,12 +99,15 @@ export class RoomComponent implements OnInit {
 
   loadMessage(room_channel_id = this.currentSelectedChannel) {
     // const room_channel_id = '1';
+
     this.api.loadMessage(room_channel_id).subscribe(res => {
       // console.log('result: ' + JSON.stringify(res));
       this.channel_chats = res;
+      this.loading = false;
     }, err => {
       // console.log('error: ' + JSON.stringify(err));
       this.channel_chats = null;
+      this.loading = false;
     });
   }
 }

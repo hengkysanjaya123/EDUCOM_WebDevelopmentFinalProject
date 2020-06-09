@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="df98e155-50b8-4db2-938f-efe7b7f15869" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ChannelChatsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ChannelChatsController.php" afterDir="false" />
-    </list>
+    <list default="true" id="df98e155-50b8-4db2-938f-efe7b7f15869" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -358,16 +355,15 @@
       <workItem from="1591448824318" duration="4510000" />
       <workItem from="1591517645705" duration="6148000" />
       <workItem from="1591535185816" duration="1031000" />
-      <workItem from="1591673739074" duration="1064000" />
+      <workItem from="1591673739074" duration="1665000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54406000" />
+    <option name="totallyTimeSpent" value="55007000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="633" y="0" width="653" height="696" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.67790896" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />

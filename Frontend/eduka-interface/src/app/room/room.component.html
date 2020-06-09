@@ -34,7 +34,9 @@
           <div class="channel-list">
             <!-- ngFor (loop through channel list in room)	-->
             <div *ngFor="let channel of room_channels">
-              <button class="waves-effect" (click)="doSomething(channel, $event)">#{{ channel.channel_name }}</button>
+              <button [class.spinner]="loading && currentSelectedChannel == channel.id"
+                      [class.button-active]="currentSelectedChannel == channel.id" class="waves-effect"
+                      (click)="doSomething(channel, $event)">#{{ channel.channel_name }}</button>
             </div>
           </div>
           <button class="createchannel-button waves-effect" [routerLink]="['/createchannel']">Create Channel</button>
