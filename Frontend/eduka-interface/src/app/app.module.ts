@@ -13,7 +13,8 @@ import {SignupComponent} from './signup/signup.component';
 import {CreateroomComponent} from './createroom/createroom.component';
 import {JoinroomComponent} from './joinroom/joinroom.component';
 import {FooterComponent} from './footer/footer.component';
-import { CreatechannelComponent } from './createchannel/createchannel.component';
+import {CreatechannelComponent} from './createchannel/createchannel.component';
+import {DataStorage} from "../provider/DataStorage";
 
 @NgModule({
   declarations: [
@@ -34,7 +35,7 @@ import { CreatechannelComponent } from './createchannel/createchannel.component'
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [DataStorage],
   bootstrap: [AppComponent]
 })
 export class AppModule {

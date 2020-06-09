@@ -66,7 +66,7 @@
 }
 
 .createchannel-button {
-  // float: left;
+  float: left;
   width: 31.85%;
   background-color: white;
   color: black;
@@ -74,12 +74,13 @@
   position: absolute;
   height: 55px;
   bottom: 0;
-  left: 1;
-  margin-left: -400px;
+  left: 2px;
+  //margin-left: -400px;
   margin-bottom: 20px;
   // margin-top: -59px;
   // margin-right: -35px;
 }
+
 .bottom-section {
   width: 100%;
 }
@@ -117,12 +118,12 @@
 }
 
 .sent-message {
-    border: 2px solid #dedede;
-    background-color: #f1f1f1;
-    border-radius: 5px;
-    padding: 10px;
-    margin: 10px 5px;
-    margin-top: 5px;
+  border: 2px solid #dedede;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 5px;
+  margin-top: 5px;
 }
 
 /* Clear floats */
@@ -145,7 +146,7 @@
 .sent-message img.right {
   float: right;
   margin-left: 20px;
-  margin-right:0;
+  margin-right: 0;
 }
 
 /* Style time text */
@@ -159,17 +160,18 @@
   float: left;
   color: #999;
 }
+
 .username-text {
-    margin-top: 25%;
-    font-family: Verdana;
-    margin-left: 0.5vw;
-    margin-top: 1%;
-  }
+  margin-top: 25%;
+  font-family: Verdana;
+  margin-left: 0.5vw;
+  margin-top: 1%;
+}
 
 .user-message {
-    font-family: Verdana;
-    margin-left: 0.5vw;
-    margin-top: 1%;
+  font-family: Verdana;
+  margin-left: 0.5vw;
+  margin-top: 1%;
 }
 
 .message {

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {HTTPCustomResponse} from '../../models/response.model';
@@ -18,7 +18,14 @@ const apiUrl = 'http://localhost:8000/api';
 })
 export class ChannelService {
 
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient) {
+  }
+
+  getRoomChannels(id): Observable<HTTPCustomResponse> {
+    return this.http.get<HTTPCustomResponse>(apiUrl + '/room_channels/room/' + id, httpOptions)
+      .pipe(
+        tap((response: HTTPCustomResponse) => console.log('result: ' + JSON.stringify(response)))
+      );
   }
 
   createChannel(data): Observable<HTTPCustomResponse> {
@@ -26,4 +33,5 @@ export class ChannelService {
       .pipe(
         tap((response: HTTPCustomResponse) => console.log('result: ' + JSON.stringify(response)))
       );
-  }}
+  }
+}

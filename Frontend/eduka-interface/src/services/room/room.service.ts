@@ -1,9 +1,10 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import {BehaviorSubject, Observable} from 'rxjs';
 import {HTTPCustomResponse} from '../../models/response.model';
 import {tap} from 'rxjs/operators';
 import {AccountServiceService} from "../AccountService/account-service.service";
+import {Room} from "../../models/room.model";
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -19,8 +20,21 @@ const apiUrl = 'http://localhost:8000/api';
 })
 export class RoomService {
 
-  constructor(private http: HttpClient, private accountService: AccountServiceService) {
+  private roomSubject: BehaviorSubject<Room>;
+  public room: Observable<Room>;
 
+  constructor(private http: HttpClient, private accountService: AccountServiceService) {
+    this.roomSubject = new BehaviorSubject<Room>(JSON.parse(localStorage.getItem('room')));
+    this.room = this.roomSubject.asObservable();
+  }
+
+  public get getRoom(): Room {
+    return this.roomSubject.value;
+  }
+
+  public setRoom(room) {
+    localStorage.setItem('room', JSON.stringify(room));
+    this.roomSubject.next(room);
   }
 
   getRooms() {

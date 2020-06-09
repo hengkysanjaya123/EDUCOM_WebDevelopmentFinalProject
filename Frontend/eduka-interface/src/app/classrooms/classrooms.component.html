@@ -54,7 +54,7 @@
   <div class="pink-line"></div>
 </div>
 <div class="my-classrooms-container">
-  <div class="select-room" scrollX="true" *ngFor="let room of rooms">
+  <div class="select-room" scrollX="true" *ngFor="let room of rooms" (click)="selectRoom(room)">
     <img class="room-item" src="../../assets/homepage/bg-image8.jpg" alt="{{ room.name }}">
     <h4 class="name"> {{room.name}} </h4>
     <p class="description"><i>{{ room.description }}</i></p>
@@ -65,7 +65,7 @@
   <div class="pink-line"></div>
 </div>
 <div class="my-classrooms-container">
-  <div class="select-room" scrollX="true" *ngFor="let room of sharedRooms">
+  <div class="select-room" scrollX="true" *ngFor="let room of sharedRooms" (click)="selectRoom(room)">
     <img class="room-item" src="../../assets/homepage/bg-image8.jpg" alt="{{ room.name }}">
     <h4 class="name"> {{room.name}} </h4>
     <p class="description"><i>{{ room.description }}</i></p>

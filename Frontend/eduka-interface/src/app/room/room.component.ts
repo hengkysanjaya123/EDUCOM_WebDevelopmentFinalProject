@@ -3,6 +3,9 @@ import {AccountServiceService} from '../../services/AccountService/account-servi
 import {MessageService} from "../../services/message/message.service";
 import {HTTPCustomResponse} from "../../models/response.model";
 import {Member} from "../../models/member.model";
+import {ChannelService} from '../../services/channel/channel.service';
+import {ActivatedRoute, Router} from "@angular/router";
+import {RoomService} from "../../services/room/room.service";
 
 @Component({
   selector: 'app-room',
@@ -11,25 +14,45 @@ import {Member} from "../../models/member.model";
 })
 export class RoomComponent implements OnInit {
 
-  channel_chats: HTTPCustomResponse;
+  channel_chats: HTTPCustomResponse = {
+    data: null,
+    message: '',
+    success: false
+  };
   currentMember: Member;
+  room_channels: Object;
+  // state: Observable<object>;
+  sub: any;
 
-  constructor(private api: MessageService, private accountService: AccountServiceService) {
+  constructor(private api: MessageService, private route: ActivatedRoute, private router: Router, private accountService: AccountServiceService, private channelapi: ChannelService, private roomApi: RoomService) {
   }
 
   ngOnInit(): void {
     this.accountService.hasAccess();
 
-    this.loadMessage();
     this.currentMember = this.accountService.userValue;
+
+    this.loadChannels();
   }
 
-  doSomething() {
-    alert('test');
+  doSomething(item, event) {
+    this.loadMessage(item.id);
   }
 
   logout() {
     this.accountService.logout();
+  }
+
+  loadChannels() {
+    const room_id = this.roomApi.getRoom.id;
+    this.channelapi.getRoomChannels(room_id).subscribe(res => {
+      console.log('result: ' + JSON.stringify(res));
+      this.room_channels = res;
+    }, err => {
+      console.log('error: ' + JSON.stringify(err));
+      this.room_channels = null;
+    });
+
   }
 
   sendMessage(item) {
@@ -58,8 +81,8 @@ export class RoomComponent implements OnInit {
 
   }
 
-  loadMessage() {
-    const room_channel_id = '1';
+  loadMessage(room_channel_id = '1') {
+    // const room_channel_id = '1';
     this.api.loadMessage(room_channel_id).subscribe(res => {
       console.log('result: ' + JSON.stringify(res));
       this.channel_chats = res;
