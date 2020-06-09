@@ -111,8 +111,8 @@ export class RoomComponent implements OnInit {
     });
   }
 
-  announce() {
-
+  announce(message) {
+    alert(JSON.stringify(message));
   }
 
 }
