@@ -41,6 +41,7 @@ class ChannelChatsController extends BaseController
             ->join('room_channels', 'channel_chats.room_channel_id', '=', 'room_channels.id')
             ->where('channel_chats.room_channel_id', '=', $room_channel_id)
 //            ->join('rooms', 'room_channels.id', '=', 'rooms.id')
+            ->orderBy('datetime')
             ->get();
 
 //        return $channelChat;

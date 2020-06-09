@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {AccountServiceService} from '../../services/AccountService/account-service.service';
 import {MessageService} from "../../services/message/message.service";
 import {HTTPCustomResponse} from "../../models/response.model";
+import {Member} from "../../models/member.model";
 
 @Component({
   selector: 'app-room',
@@ -11,6 +12,7 @@ import {HTTPCustomResponse} from "../../models/response.model";
 export class RoomComponent implements OnInit {
 
   channel_chats: HTTPCustomResponse;
+  currentMember: Member;
 
   constructor(private api: MessageService, private accountService: AccountServiceService) {
   }
@@ -19,6 +21,7 @@ export class RoomComponent implements OnInit {
     this.accountService.hasAccess();
 
     this.loadMessage();
+    this.currentMember = this.accountService.userValue;
   }
 
   doSomething() {
@@ -48,7 +51,7 @@ export class RoomComponent implements OnInit {
     this.api.sendMessage(data).subscribe(res => {
       console.log('result: ' + JSON.stringify(res));
       this.loadMessage();
-      item.target.placeholder = '';
+      item.target.placeholder = 'type your message here...';
     }, err => {
       console.log('error: ' + JSON.stringify(err));
     });
