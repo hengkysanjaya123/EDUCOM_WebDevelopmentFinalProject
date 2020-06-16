@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="df98e155-50b8-4db2-938f-efe7b7f15869" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RoomChannelsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RoomChannelsController.php" afterDir="false" />
-    </list>
+    <list default="true" id="df98e155-50b8-4db2-938f-efe7b7f15869" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -382,12 +379,12 @@
       <workItem from="1591517645705" duration="6148000" />
       <workItem from="1591535185816" duration="1031000" />
       <workItem from="1591673739074" duration="1665000" />
-      <workItem from="1592150281485" duration="1598000" />
+      <workItem from="1592150281485" duration="1952000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56605000" />
+    <option name="totallyTimeSpent" value="56959000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="704" extended-state="6" />

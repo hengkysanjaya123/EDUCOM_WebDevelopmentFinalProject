@@ -11,7 +11,7 @@ class RoomChannelsController extends BaseController
     public function index()
     {
         $roomChannels = RoomChannels::with(['room'])->get();
-va
+
         return $roomChannels;
 //        return $this->sendResponse($roomChannels, 'Data retrieved successfully');
     }
