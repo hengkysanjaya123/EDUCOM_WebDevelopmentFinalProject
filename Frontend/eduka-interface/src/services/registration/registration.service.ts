@@ -11,7 +11,7 @@ const httpOptions = {
     }
   )
 };
-const apiUrl = 'http://localhost:8000/api/members';
+const apiUrl = 'http://34.71.254.24:8000/api/members';
 
 @Injectable({
   providedIn: 'root'
