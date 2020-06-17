@@ -35,4 +35,11 @@ export class MessageService {
       );
   }
 
+  translation(data): Observable<HTTPCustomResponse> {
+    return this.http.post<HTTPCustomResponse>('http://localhost:8001/api/translate', data, httpOptions)
+      .pipe(
+        tap((response: HTTPCustomResponse) => console.log('result: ' + JSON.stringify(response)))
+      );
+  }
+
 }

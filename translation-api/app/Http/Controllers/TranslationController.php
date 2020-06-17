@@ -25,6 +25,12 @@ class TranslationController extends Controller
         $translation = TranslationLog::create(array_merge($validatedData, ['datetime' => date('Y-m-d H:i:s'), 'result' => $result]));
 
 
-        return $result;
+        $response = [
+            'success' => true,
+            'data' => $result,
+            'message' => 'translation success',
+        ];
+
+        return response()->json($response, 200);
     }
 }
