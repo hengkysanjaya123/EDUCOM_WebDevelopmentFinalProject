@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/eduka-interface",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
