@@ -11,7 +11,7 @@ const httpOptions = {
     }
   )
 };
-const apiUrl = 'http://34.71.254.24:8000/api/channel_chats';
+const apiUrl = 'https://34.71.254.24:8000/api/channel_chats';
 
 @Injectable({
   providedIn: 'root'
