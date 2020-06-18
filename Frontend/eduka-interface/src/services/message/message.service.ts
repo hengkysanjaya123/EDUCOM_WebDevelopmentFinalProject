@@ -11,7 +11,7 @@ const httpOptions = {
     }
   )
 };
-const apiUrl = 'https://34.71.254.24:8000/api/channel_chats';
+const apiUrl = 'https://call.educom.club/api/channel_chats';
 
 @Injectable({
   providedIn: 'root'
@@ -36,7 +36,7 @@ export class MessageService {
   }
 
   translation(data): Observable<HTTPCustomResponse> {
-    return this.http.post<HTTPCustomResponse>('http://104.197.120.148:8000/api/translate', data, httpOptions)
+    return this.http.post<HTTPCustomResponse>('https://translate.educom.club/api/translate', data, httpOptions)
       .pipe(
         tap((response: HTTPCustomResponse) => console.log('result: ' + JSON.stringify(response)))
       );

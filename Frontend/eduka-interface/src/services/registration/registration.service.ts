@@ -11,7 +11,7 @@ const httpOptions = {
     }
   )
 };
-const apiUrl = 'https://34.71.254.24:8000/api/members';
+const apiUrl = 'https://call.educom.club/api/members';
 
 @Injectable({
   providedIn: 'root'
