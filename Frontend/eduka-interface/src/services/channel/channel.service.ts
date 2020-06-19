@@ -11,7 +11,7 @@ const httpOptions = {
     }
   )
 };
-const apiUrl = 'https://call.educom.club/api';
+const apiUrl ='https://cors-anywhere.herokuapp.com/https://call.educom.club/api';
 
 @Injectable({
   providedIn: 'root'
