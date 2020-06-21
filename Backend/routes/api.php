@@ -34,8 +34,6 @@ Route::delete('members/{id}', 'MembersController@delete');
 Route::get('rooms', 'RoomsController@index');
 Route::get('rooms/mine/{id}', 'RoomsController@getMyRooms');
 Route::get('rooms/shared/{id}', 'RoomsController@getSharedRooms');
-
-
 Route::get('rooms/{id}', 'RoomsController@show');
 Route::post('rooms', 'RoomsController@store');
 Route::put('rooms/{id}', 'RoomsController@update');
@@ -52,7 +50,6 @@ Route::delete('room_participants/{id}', 'RoomParticipantsController@delete');
 Route::get('room_channels', 'RoomChannelsController@index');
 Route::get('room_channels/{id}', 'RoomChannelsController@show');
 Route::get('room_channels/room/{id}', 'RoomChannelsController@filterbyroom');
-
 Route::post('room_channels', 'RoomChannelsController@store');
 Route::put('room_channels/{id}', 'RoomChannelsController@update');
 Route::delete('room_channels/{id}', 'RoomChannelsController@delete');
@@ -61,7 +58,6 @@ Route::delete('room_channels/{id}', 'RoomChannelsController@delete');
 Route::get('channel_chats', 'ChannelChatsController@index');
 Route::get('channel_chats/{id}', 'ChannelChatsController@show');
 Route::get('channel_chats/room_channel/{id}', 'ChannelChatsController@getbyroomchannel');
-
 Route::post('channel_chats', 'ChannelChatsController@store');
 Route::put('channel_chats/{id}', 'ChannelChatsController@update');
 Route::delete('channel_chats/{id}', 'ChannelChatsController@delete');
